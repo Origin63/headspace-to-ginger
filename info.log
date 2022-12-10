@@ -1,0 +1,232 @@
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:38:44.477Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:38:44.490Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:39:25.376Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:39:25.388Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:39:59.781Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:39:59.792Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:40:53.743Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:40:53.755Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:41:16.326Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:41:16.337Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:42:20.077Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:42:20.088Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:43:23.368Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:43:23.380Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:44:17.341Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:44:17.352Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:50:17.380Z'
+}
+{
+  data: {
+    url: undefined,
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T20:51:21.853Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:51:21.864Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T22:34:22.343Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T22:49:24.018Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-09T22:51:20.336Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:37:05.582Z'
+}
+{
+  message: 'Error processing axios Error: Request failed with status code 401',
+  level: 'error',
+  timestamp: '2022-12-10T00:37:05.863Z'
+}

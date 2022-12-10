@@ -1,0 +1,50 @@
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:38:44.490Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:39:25.388Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:39:59.792Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:40:53.755Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:41:16.337Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:42:20.088Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:43:23.380Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:44:17.352Z'
+}
+{
+  message: 'Error processing axios TypeError [ERR_INVALID_ARG_TYPE]: The "url" argument must be of type string. Received undefined',
+  level: 'error',
+  timestamp: '2022-12-09T20:51:21.864Z'
+}
+{
+  message: 'Error processing axios Error: Request failed with status code 401',
+  level: 'error',
+  timestamp: '2022-12-10T00:37:05.863Z'
+}
