@@ -230,3 +230,125 @@
   level: 'error',
   timestamp: '2022-12-10T00:37:05.863Z'
 }
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer undefined'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:41:36.082Z'
+}
+{
+  message: 'Error processing axios Error: Request failed with status code 401',
+  level: 'error',
+  timestamp: '2022-12-10T00:41:36.448Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:13.584Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3177869477',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:14.315Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3186712348',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:14.608Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3187850934',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:14.896Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3229397937',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:15.204Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3229906319',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:15.511Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3230133006',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:15.776Z'
+}
+{
+  data: {
+    url: 'https://api.hubapi.com/crm/v3/objects/emails?after=3230915806',
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25'
+    }
+  },
+  level: 'info',
+  message: 'processing Axios',
+  timestamp: '2022-12-10T00:43:16.051Z'
+}

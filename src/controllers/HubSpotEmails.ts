@@ -25,5 +25,3 @@ export default class HubSpotEmails {
     }
   }
 }
-
-new HubSpotEmails('pat-na1-b4555830-ae7e-4968-beb7-150f6afd1d25');

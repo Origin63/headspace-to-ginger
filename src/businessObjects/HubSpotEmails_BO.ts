@@ -1,6 +1,7 @@
 import HubSpotEmails from "../controllers/HubSpotEmails";
 import { email } from "../types/HS-Emails";
 import { hubspotResult } from "../types/HS-Objects";
+import * as dotenv from 'dotenv';
 class HubSpotEmails_BO {
 
   /**
@@ -61,4 +62,5 @@ class HubSpotEmails_BO {
   }
 }
 
+dotenv.config();
 HubSpotEmails_BO.init();

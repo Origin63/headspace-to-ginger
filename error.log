@@ -48,3 +48,8 @@
   level: 'error',
   timestamp: '2022-12-10T00:37:05.863Z'
 }
+{
+  message: 'Error processing axios Error: Request failed with status code 401',
+  level: 'error',
+  timestamp: '2022-12-10T00:41:36.448Z'
+}
