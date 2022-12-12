@@ -3,14 +3,16 @@ export interface email {
   createdAt: string,
   updatedAt: string,
   archived: boolean,
-  properties: object
+  properties: emailProperties
 }
 
-export type updateemail = {
-  id: number | string;
-  properties: email;
-};
-
-export type insertemail = {
-  properties: email;
-};
+export interface emailProperties {
+  hs_timestamp?: string,
+  hs_email_direction?: string,
+  hs_email_status?: string,
+  hs_email_subject?: string,
+  hs_email_text?: string,
+  hs_email_html?: string,
+  hs_createdate?: string,
+  hs_object_id?: string
+}

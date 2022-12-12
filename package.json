@@ -9,7 +9,8 @@
     "start": "npm run build && node build/app.js",
     "start:dev": "nodemon",
     "lint": "eslint . --ext .ts",
-    "lint-fix": "eslint . --ext .ts --fix"
+    "lint-fix": "eslint . --ext .ts --fix",
+    "emails": "ts-node ./src/businessObjects/HubSpotEmails_BO.ts"
   },
   "author": "",
   "license": "ISC",
