@@ -98,7 +98,7 @@ class HubSpotEmails_BO {
     return newObject;
   }
 
-  static async recordExists(records: hubspotResult) {
+  static recordExists(records: hubspotResult) {
     if (records.results && records.results.length > 0) {
       return records.results[0];
     }
@@ -113,7 +113,7 @@ class HubSpotEmails_BO {
       for (let key in emails) {
         await this.delay(300);
         let emailSearch : hubspotResult = await gingerHubspotController.checkIfEmailExists('hs_email_subject', key)
-        const existingEmail: email = await this.recordExists(emailSearch);
+        const existingEmail: email = this.recordExists(emailSearch);
         const properties = emails[key].properties;
         if (existingEmail.id) {
           const {
