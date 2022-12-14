@@ -1,0 +1,1312 @@
+[
+  { "key": "about_us", "operation": "latest", "hfwKey": "about_us" },
+  { "key": "address", "operation": "latest", "hfwKey": "address" },
+  { "key": "address2", "operation": "latest", "hfwKey": "address2" },
+  { "key": "annualrevenue", "operation": "latest", "hfwKey": "annualrevenue" },
+  { "key": "city", "operation": "latest", "hfwKey": "city" },
+  { "key": "closedate", "operation": "oldest", "hfwKey": "closedate" },
+  {
+    "key": "converted_total_won_recurring_revenue_",
+    "operation": "latest",
+    "hfwKey": "converted_total_won_recurring_revenue_"
+  },
+  { "key": "country", "operation": "latest", "hfwKey": "country" },
+  { "key": "description", "operation": "latest", "hfwKey": "description" },
+  { "key": "domain", "operation": "latest", "hfwKey": "domain" },
+  {
+    "key": "engagements_last_meeting_booked",
+    "operation": "latest",
+    "hfwKey": "engagements_last_meeting_booked"
+  },
+  {
+    "key": "engagements_last_meeting_booked_campaign",
+    "operation": "latest",
+    "hfwKey": "engagements_last_meeting_booked_campaign"
+  },
+  {
+    "key": "engagements_last_meeting_booked_medium",
+    "operation": "latest",
+    "hfwKey": "engagements_last_meeting_booked_medium"
+  },
+  {
+    "key": "engagements_last_meeting_booked_source",
+    "operation": "latest",
+    "hfwKey": "engagements_last_meeting_booked_source"
+  },
+  { "key": "founded_year", "operation": "oldest", "hfwKey": "founded_year" },
+  {
+    "key": "hubspot_owner_id",
+    "operation": "latest",
+    "hfwKey": "hubspot_owner_id"
+  },
+  { "key": "industry", "operation": "latest", "hfwKey": "industry" },
+  { "key": "is_public", "operation": "latest", "hfwKey": "is_public" },
+  {
+    "key": "lifecyclestage",
+    "operation": "latest",
+    "hfwKey": "lifecyclestage"
+  },
+  { "key": "name", "operation": "latest", "hfwKey": "name" },
+  {
+    "key": "notes_next_activity_date",
+    "operation": "latest",
+    "hfwKey": "notes_next_activity_date"
+  },
+  {
+    "key": "numberofemployees",
+    "operation": "latest",
+    "hfwKey": "numberofemployees"
+  },
+  { "key": "phone", "operation": "latest", "hfwKey": "phone" },
+  {
+    "key": "send_headspace_is_coming_email",
+    "operation": "latest",
+    "hfwKey": "send_headspace_is_coming_email"
+  },
+  { "key": "state", "operation": "latest", "hfwKey": "state" },
+  { "key": "timezone", "operation": "latest", "hfwKey": "timezone" },
+  {
+    "key": "total_money_raised",
+    "operation": "latest",
+    "hfwKey": "total_money_raised"
+  },
+  { "key": "type", "operation": "latest", "hfwKey": "type" },
+  {
+    "key": "web_technologies",
+    "operation": "latest",
+    "hfwKey": "web_technologies"
+  },
+  { "key": "website", "operation": "latest", "hfwKey": "website" },
+  { "key": "zip", "operation": "latest", "hfwKey": "zip" },
+  {
+    "key": "account_name_unique__c",
+    "operation": "latest",
+    "hfwKey": "account_name_unique__c"
+  },
+  {
+    "key": "account_owner_assigned_date__c",
+    "operation": "latest",
+    "hfwKey": "account_owner_assigned_date__c"
+  },
+  {
+    "key": "account_owner_role_name",
+    "operation": "latest",
+    "hfwKey": "account_owner_role_name"
+  },
+  {
+    "key": "account_priority__c",
+    "operation": "latest",
+    "hfwKey": "account_priority__c"
+  },
+  {
+    "key": "account_source_detail__c",
+    "operation": "latest",
+    "hfwKey": "account_source_detail__c"
+  },
+  {
+    "key": "active_users_last_30_days__c",
+    "operation": "latest",
+    "hfwKey": "active_users_last_30_days__c"
+  },
+  {
+    "key": "active_users_last_7_days__c",
+    "operation": "latest",
+    "hfwKey": "active_users_last_7_days__c"
+  },
+  { "key": "ae_notes__c", "operation": "latest", "hfwKey": "ae_notes__c" },
+  {
+    "key": "alert_psm_pilot_email_sent__c",
+    "operation": "latest",
+    "hfwKey": "alert_psm_pilot_email_sent__c"
+  },
+  { "key": "alias__c", "operation": "latest", "hfwKey": "alias__c" },
+  {
+    "key": "allotted_service_credits__c",
+    "operation": "latest",
+    "hfwKey": "allotted_service_credits__c"
+  },
+  {
+    "key": "approved_footer_intl__c",
+    "operation": "latest",
+    "hfwKey": "approved_footer_intl__c"
+  },
+  {
+    "key": "arbitrary_checkbox_field_to_trigger_wfs__c",
+    "operation": "latest",
+    "hfwKey": "arbitrary_checkbox_field_to_trigger_wfs__c"
+  },
+  {
+    "key": "associatedterminusaccountsuptodateasof__c",
+    "operation": "latest",
+    "hfwKey": "associatedterminusaccountsuptodateasof__c"
+  },
+  {
+    "key": "auto_renew_opt_out_",
+    "operation": "latest",
+    "hfwKey": "auto_renew_opt_out_"
+  },
+  {
+    "key": "available_client_channels__c",
+    "operation": "latest",
+    "hfwKey": "available_client_channels__c"
+  },
+  {
+    "key": "available_seats__c",
+    "operation": "latest",
+    "hfwKey": "available_seats__c"
+  },
+  {
+    "key": "benefits_start_date__c",
+    "operation": "latest",
+    "hfwKey": "benefits_start_date__c"
+  },
+  {
+    "key": "bh_awareness__c",
+    "operation": "latest",
+    "hfwKey": "bh_awareness__c"
+  },
+  {
+    "key": "billing_country",
+    "operation": "latest",
+    "hfwKey": "billing_country"
+  },
+  {
+    "key": "billing_email__c",
+    "operation": "latest",
+    "hfwKey": "billing_email__c"
+  },
+  {
+    "key": "breakdown_by_role__c",
+    "operation": "latest",
+    "hfwKey": "breakdown_by_role__c"
+  },
+  { "key": "budget__c", "operation": "latest", "hfwKey": "budget__c" },
+  {
+    "key": "building_a_mindful_community_webinars__c",
+    "operation": "latest",
+    "hfwKey": "building_a_mindful_community_webinars__c"
+  },
+  {
+    "key": "business_problem_objective__c",
+    "operation": "latest",
+    "hfwKey": "business_problem_objective__c"
+  },
+  { "key": "buyers__c", "operation": "latest", "hfwKey": "buyers__c" },
+  {
+    "key": "client_campaign_participation__c",
+    "operation": "latest",
+    "hfwKey": "client_campaign_participation__c"
+  },
+  {
+    "key": "client_care_plan__c",
+    "operation": "latest",
+    "hfwKey": "client_care_plan__c"
+  },
+  {
+    "key": "client_health_status__c",
+    "operation": "latest",
+    "hfwKey": "client_health_status__c"
+  },
+  {
+    "key": "client_name_logo_use__c",
+    "operation": "latest",
+    "hfwKey": "client_name_logo_use__c"
+  },
+  {
+    "key": "client_requested_footer__c",
+    "operation": "latest",
+    "hfwKey": "client_requested_footer__c"
+  },
+  {
+    "key": "client_tier__c",
+    "operation": "latest",
+    "hfwKey": "client_tier__c"
+  },
+  {
+    "key": "clinical_availability__c",
+    "operation": "latest",
+    "hfwKey": "clinical_availability__c"
+  },
+  {
+    "key": "clinical_benefits__c",
+    "operation": "latest",
+    "hfwKey": "clinical_benefits__c"
+  },
+  {
+    "key": "clinical_persona__c",
+    "operation": "latest",
+    "hfwKey": "clinical_persona__c"
+  },
+  { "key": "code__c", "operation": "latest", "hfwKey": "code__c" },
+  {
+    "key": "commercial_lives__c",
+    "operation": "latest",
+    "hfwKey": "commercial_lives__c"
+  },
+  {
+    "key": "common_stressors__c",
+    "operation": "latest",
+    "hfwKey": "common_stressors__c"
+  },
+  {
+    "key": "company_overview__c",
+    "operation": "latest",
+    "hfwKey": "company_overview__c"
+  },
+  {
+    "key": "company_stage__c",
+    "operation": "latest",
+    "hfwKey": "company_stage__c"
+  },
+  {
+    "key": "contract_end__c",
+    "operation": "latest",
+    "hfwKey": "contract_end__c"
+  },
+  {
+    "key": "conversational_name__c",
+    "operation": "latest",
+    "hfwKey": "conversational_name__c"
+  },
+  {
+    "key": "current_enrolled_members__c",
+    "operation": "latest",
+    "hfwKey": "current_enrolled_members__c"
+  },
+  {
+    "key": "current_members__c",
+    "operation": "latest",
+    "hfwKey": "current_members__c"
+  },
+  {
+    "key": "custom_type__c",
+    "operation": "latest",
+    "hfwKey": "custom_type__c"
+  },
+  {
+    "key": "days_until_renewal",
+    "operation": "latest",
+    "hfwKey": "days_until_renewal"
+  },
+  {
+    "key": "dependents_covered__c",
+    "operation": "latest",
+    "hfwKey": "dependents_covered__c"
+  },
+  {
+    "key": "desk_worker__c",
+    "operation": "latest",
+    "hfwKey": "desk_worker__c"
+  },
+  {
+    "key": "df_industry__c",
+    "operation": "latest",
+    "hfwKey": "df_industry__c"
+  },
+  {
+    "key": "df_sub_industry__c",
+    "operation": "latest",
+    "hfwKey": "df_sub_industry__c"
+  },
+  {
+    "key": "django_account_name__c",
+    "operation": "latest",
+    "hfwKey": "django_account_name__c"
+  },
+  {
+    "key": "do_not_contact__c",
+    "operation": "latest",
+    "hfwKey": "do_not_contact__c"
+  },
+  { "key": "eap__c", "operation": "latest", "hfwKey": "eap__c" },
+  {
+    "key": "ehir_cohorts__c",
+    "operation": "latest",
+    "hfwKey": "ehir_cohorts__c"
+  },
+  {
+    "key": "eligibility_file_frequency__c",
+    "operation": "latest",
+    "hfwKey": "eligibility_file_frequency__c"
+  },
+  {
+    "key": "eligibility_file_owner__c",
+    "operation": "latest",
+    "hfwKey": "eligibility_file_owner__c"
+  },
+  {
+    "key": "eligibility_notes__c",
+    "operation": "latest",
+    "hfwKey": "eligibility_notes__c"
+  },
+  {
+    "key": "eligible_population__c",
+    "operation": "latest",
+    "hfwKey": "eligible_population__c"
+  },
+  {
+    "key": "email_footer__c",
+    "operation": "latest",
+    "hfwKey": "email_footer__c"
+  },
+  {
+    "key": "email_in_ef__c",
+    "operation": "latest",
+    "hfwKey": "email_in_ef__c"
+  },
+  { "key": "email_url__c", "operation": "latest", "hfwKey": "email_url__c" },
+  {
+    "key": "email_verification_domain__c",
+    "operation": "latest",
+    "hfwKey": "email_verification_domain__c"
+  },
+  {
+    "key": "employee_comm_channels__c",
+    "operation": "latest",
+    "hfwKey": "employee_comm_channels__c"
+  },
+  {
+    "key": "employee_lead_form_tier__c",
+    "operation": "latest",
+    "hfwKey": "employee_lead_form_tier__c"
+  },
+  {
+    "key": "employees_form__c",
+    "operation": "latest",
+    "hfwKey": "employees_form__c"
+  },
+  {
+    "key": "employer_hq__c",
+    "operation": "latest",
+    "hfwKey": "employer_hq__c"
+  },
+  {
+    "key": "employer_internal_comms__c",
+    "operation": "latest",
+    "hfwKey": "employer_internal_comms__c"
+  },
+  { "key": "employess__c", "operation": "latest", "hfwKey": "employess__c" },
+  { "key": "endofsurge__c", "operation": "latest", "hfwKey": "endofsurge__c" },
+  {
+    "key": "estimated_renewal_date__auto_populated_",
+    "operation": "latest",
+    "hfwKey": "estimated_renewal_date__auto_populated_"
+  },
+  {
+    "key": "executive_focus_account__c",
+    "operation": "latest",
+    "hfwKey": "executive_focus_account__c"
+  },
+  { "key": "female__c", "operation": "latest", "hfwKey": "female__c" },
+  {
+    "key": "first_closed_won_date",
+    "operation": "oldest",
+    "hfwKey": "first_closed_won_date"
+  },
+  { "key": "founded__c", "operation": "latest", "hfwKey": "founded__c" },
+  {
+    "key": "gender_info__c",
+    "operation": "latest",
+    "hfwKey": "gender_info__c"
+  },
+  {
+    "key": "ginger_approved_footer_us__c",
+    "operation": "latest",
+    "hfwKey": "ginger_approved_footer_us__c"
+  },
+  { "key": "ginger_id", "operation": "latest", "hfwKey": "ginger_id" },
+  {
+    "key": "ginger_permission_to_email__c",
+    "operation": "latest",
+    "hfwKey": "ginger_permission_to_email__c"
+  },
+  {
+    "key": "ginger_type__c",
+    "operation": "latest",
+    "hfwKey": "ginger_type__c"
+  },
+  {
+    "key": "global_account__c",
+    "operation": "latest",
+    "hfwKey": "global_account__c"
+  },
+  {
+    "key": "has_landing_page__c",
+    "operation": "latest",
+    "hfwKey": "has_landing_page__c"
+  },
+  {
+    "key": "has_redemption_opp__c",
+    "operation": "latest",
+    "hfwKey": "has_redemption_opp__c"
+  },
+  { "key": "headline__c", "operation": "latest", "hfwKey": "headline__c" },
+  {
+    "key": "health_plan_tier__c",
+    "operation": "latest",
+    "hfwKey": "health_plan_tier__c"
+  },
+  {
+    "key": "health_score__c",
+    "operation": "latest",
+    "hfwKey": "health_score__c"
+  },
+  {
+    "key": "highestsurgepercent__c",
+    "operation": "latest",
+    "hfwKey": "highestsurgepercent__c"
+  },
+  {
+    "key": "history_of_lead__c",
+    "operation": "latest",
+    "hfwKey": "history_of_lead__c"
+  },
+  {
+    "key": "hold_account_ae__c",
+    "operation": "latest",
+    "hfwKey": "hold_account_ae__c"
+  },
+  { "key": "incentives__c", "operation": "latest", "hfwKey": "incentives__c" },
+  {
+    "key": "incident_notification_requirement__c",
+    "operation": "latest",
+    "hfwKey": "incident_notification_requirement__c"
+  },
+  {
+    "key": "individual_lives__c",
+    "operation": "latest",
+    "hfwKey": "individual_lives__c"
+  },
+  {
+    "key": "industry_details__c",
+    "operation": "latest",
+    "hfwKey": "industry_details__c"
+  },
+  {
+    "key": "insurance_carrier_more_detail__c",
+    "operation": "latest",
+    "hfwKey": "insurance_carrier_more_detail__c"
+  },
+  {
+    "key": "insurance_carriers__c",
+    "operation": "latest",
+    "hfwKey": "insurance_carriers__c"
+  },
+  {
+    "key": "international_region__c",
+    "operation": "latest",
+    "hfwKey": "international_region__c"
+  },
+  {
+    "key": "interview_with_media_press__c",
+    "operation": "latest",
+    "hfwKey": "interview_with_media_press__c"
+  },
+  { "key": "intl_expat__c", "operation": "latest", "hfwKey": "intl_expat__c" },
+  {
+    "key": "intl_native__c",
+    "operation": "latest",
+    "hfwKey": "intl_native__c"
+  },
+  {
+    "key": "invitations_to_be_interviewed_for_a_head__c",
+    "operation": "latest",
+    "hfwKey": "invitations_to_be_interviewed_for_a_head__c"
+  },
+  {
+    "key": "is_ginger_customer",
+    "operation": "latest",
+    "hfwKey": "is_ginger_customer"
+  },
+  {
+    "key": "landing_page__c",
+    "operation": "latest",
+    "hfwKey": "landing_page__c"
+  },
+  {
+    "key": "last_activity_date_adjusted__c",
+    "operation": "latest",
+    "hfwKey": "last_activity_date_adjusted__c"
+  },
+  {
+    "key": "last_client_health_update_task__c",
+    "operation": "latest",
+    "hfwKey": "last_client_health_update_task__c"
+  },
+  {
+    "key": "lastuniquevisitorssnapshot__c",
+    "operation": "latest",
+    "hfwKey": "lastuniquevisitorssnapshot__c"
+  },
+  {
+    "key": "lastvisitmoment__c",
+    "operation": "latest",
+    "hfwKey": "lastvisitmoment__c"
+  },
+  {
+    "key": "lastvisitsessionssnapshot__c",
+    "operation": "latest",
+    "hfwKey": "lastvisitsessionssnapshot__c"
+  },
+  {
+    "key": "_survey_2_sent__c",
+    "operation": "latest",
+    "hfwKey": "_survey_2_sent__c"
+  },
+  {
+    "key": "_survey_3_sent__c",
+    "operation": "latest",
+    "hfwKey": "_survey_3_sent__c"
+  },
+  {
+    "key": "launch_date__c",
+    "operation": "oldest",
+    "hfwKey": "launch_date__c"
+  },
+  {
+    "key": "launch_webinars__c",
+    "operation": "oldest",
+    "hfwKey": "launch_webinars__c"
+  },
+  {
+    "key": "lead_owner_name__c",
+    "operation": "latest",
+    "hfwKey": "lead_owner_name__c"
+  },
+  {
+    "key": "leadgenius_employee_range__c",
+    "operation": "latest",
+    "hfwKey": "leadgenius_employee_range__c"
+  },
+  {
+    "key": "leadgenius_industry__c",
+    "operation": "latest",
+    "hfwKey": "leadgenius_industry__c"
+  },
+  {
+    "key": "leadgenius_revenue_range__c",
+    "operation": "latest",
+    "hfwKey": "leadgenius_revenue_range__c"
+  },
+  {
+    "key": "length_of_last_opportunity_months__c",
+    "operation": "latest",
+    "hfwKey": "length_of_last_opportunity_months__c"
+  },
+  {
+    "key": "length_of_time_months__c",
+    "operation": "latest",
+    "hfwKey": "length_of_time_months__c"
+  },
+  {
+    "key": "linkedin_account__c",
+    "operation": "latest",
+    "hfwKey": "linkedin_account__c"
+  },
+  {
+    "key": "linkedin_url__c",
+    "operation": "latest",
+    "hfwKey": "linkedin_url__c"
+  },
+  {
+    "key": "logo_location__c",
+    "operation": "latest",
+    "hfwKey": "logo_location__c"
+  },
+  {
+    "key": "logo_marketing_materials__c",
+    "operation": "latest",
+    "hfwKey": "logo_marketing_materials__c"
+  },
+  {
+    "key": "logo_on_headspace_website__c",
+    "operation": "latest",
+    "hfwKey": "logo_on_headspace_website__c"
+  },
+  {
+    "key": "logo_on_sales_materials__c",
+    "operation": "latest",
+    "hfwKey": "logo_on_sales_materials__c"
+  },
+  { "key": "lpe_url__c", "operation": "latest", "hfwKey": "lpe_url__c" },
+  { "key": "male__c", "operation": "latest", "hfwKey": "male__c" },
+  {
+    "key": "medicaid_lives__c",
+    "operation": "latest",
+    "hfwKey": "medicaid_lives__c"
+  },
+  {
+    "key": "medicare_lives__c",
+    "operation": "latest",
+    "hfwKey": "medicare_lives__c"
+  },
+  {
+    "key": "meditations_completed_last_30_days__c",
+    "operation": "latest",
+    "hfwKey": "meditations_completed_last_30_days__c"
+  },
+  {
+    "key": "meditations_completed_ytd__c",
+    "operation": "latest",
+    "hfwKey": "meditations_completed_ytd__c"
+  },
+  {
+    "key": "meditations_last_7_days__c",
+    "operation": "latest",
+    "hfwKey": "meditations_last_7_days__c"
+  },
+  {
+    "key": "members_added_last_30_days__c",
+    "operation": "latest",
+    "hfwKey": "members_added_last_30_days__c"
+  },
+  {
+    "key": "members_added_lifetime__c",
+    "operation": "latest",
+    "hfwKey": "members_added_lifetime__c"
+  },
+  {
+    "key": "members_added_ytd__c",
+    "operation": "latest",
+    "hfwKey": "members_added_ytd__c"
+  },
+  {
+    "key": "mention_name_online_advertising__c",
+    "operation": "latest",
+    "hfwKey": "mention_name_online_advertising__c"
+  },
+  {
+    "key": "mention_relationship_in_media_press__c",
+    "operation": "latest",
+    "hfwKey": "mention_relationship_in_media_press__c"
+  },
+  {
+    "key": "monthly_active_user__c",
+    "operation": "latest",
+    "hfwKey": "monthly_active_user__c"
+  },
+  {
+    "key": "months_as_a_customer__c",
+    "operation": "latest",
+    "hfwKey": "months_as_a_customer__c"
+  },
+  {
+    "key": "most_important_take_aways__c",
+    "operation": "latest",
+    "hfwKey": "most_important_take_aways__c"
+  },
+  {
+    "key": "most_recent_customer_tier__c",
+    "operation": "latest",
+    "hfwKey": "most_recent_customer_tier__c"
+  },
+  {
+    "key": "most_recent_new_biz_or_renewal_amount__c",
+    "operation": "latest",
+    "hfwKey": "most_recent_new_biz_or_renewal_amount__c"
+  },
+  {
+    "key": "most_recent_opportunity_is_a_bundle",
+    "operation": "latest",
+    "hfwKey": "most_recent_opportunity_is_a_bundle"
+  },
+  {
+    "key": "most_recent_products_sold__c",
+    "operation": "latest",
+    "hfwKey": "most_recent_products_sold__c"
+  },
+  {
+    "key": "naics_description__c",
+    "operation": "latest",
+    "hfwKey": "naics_description__c"
+  },
+  {
+    "key": "nationality__c",
+    "operation": "latest",
+    "hfwKey": "nationality__c"
+  },
+  {
+    "key": "new_hire_emails__c",
+    "operation": "latest",
+    "hfwKey": "new_hire_emails__c"
+  },
+  {
+    "key": "no_dependent_codes__c",
+    "operation": "latest",
+    "hfwKey": "no_dependent_codes__c"
+  },
+  {
+    "key": "no_dependents_covered__c",
+    "operation": "latest",
+    "hfwKey": "no_dependents_covered__c"
+  },
+  {
+    "key": "no_of_contact_made__c",
+    "operation": "latest",
+    "hfwKey": "no_of_contact_made__c"
+  },
+  { "key": "non_binary__c", "operation": "latest", "hfwKey": "non_binary__c" },
+  {
+    "key": "non_desk_worker__c",
+    "operation": "latest",
+    "hfwKey": "non_desk_worker__c"
+  },
+  {
+    "key": "non_member_comms__c",
+    "operation": "latest",
+    "hfwKey": "non_member_comms__c"
+  },
+  {
+    "key": "non_profit_tax_id__c",
+    "operation": "latest",
+    "hfwKey": "non_profit_tax_id__c"
+  },
+  {
+    "key": "number_of_administrators__c",
+    "operation": "latest",
+    "hfwKey": "number_of_administrators__c"
+  },
+  {
+    "key": "number_of_closed_won_opps",
+    "operation": "latest",
+    "hfwKey": "number_of_closed_won_opps"
+  },
+  {
+    "key": "number_of_voucher_codes__c",
+    "operation": "latest",
+    "hfwKey": "number_of_voucher_codes__c"
+  },
+  {
+    "key": "of_customers__c",
+    "operation": "latest",
+    "hfwKey": "of_customers__c"
+  },
+  {
+    "key": "on_site_launch_presentations__c",
+    "operation": "latest",
+    "hfwKey": "on_site_launch_presentations__c"
+  },
+  {
+    "key": "on_site_meditation_sessions__c",
+    "operation": "latest",
+    "hfwKey": "on_site_meditation_sessions__c"
+  },
+  {
+    "key": "onboarding_process__c",
+    "operation": "latest",
+    "hfwKey": "onboarding_process__c"
+  },
+  {
+    "key": "org_country__c",
+    "operation": "latest",
+    "hfwKey": "org_country__c"
+  },
+  { "key": "org_id__c", "operation": "latest", "hfwKey": "org_id__c" },
+  {
+    "key": "other_benefits__c",
+    "operation": "latest",
+    "hfwKey": "other_benefits__c"
+  },
+  {
+    "key": "other_comm_channel__c",
+    "operation": "latest",
+    "hfwKey": "other_comm_channel__c"
+  },
+  {
+    "key": "other_eap_detail__c",
+    "operation": "latest",
+    "hfwKey": "other_eap_detail__c"
+  },
+  {
+    "key": "other_footer__c",
+    "operation": "latest",
+    "hfwKey": "other_footer__c"
+  },
+  {
+    "key": "other_lives__c",
+    "operation": "latest",
+    "hfwKey": "other_lives__c"
+  },
+  {
+    "key": "other_notes__c",
+    "operation": "latest",
+    "hfwKey": "other_notes__c"
+  },
+  {
+    "key": "other_vendor_solution_details__c",
+    "operation": "latest",
+    "hfwKey": "other_vendor_solution_details__c"
+  },
+  {
+    "key": "others_details__c",
+    "operation": "latest",
+    "hfwKey": "others_details__c"
+  },
+  {
+    "key": "override_customer_tier__c",
+    "operation": "latest",
+    "hfwKey": "override_customer_tier__c"
+  },
+  {
+    "key": "override_headspace_org__c",
+    "operation": "latest",
+    "hfwKey": "override_headspace_org__c"
+  },
+  {
+    "key": "partner_client__c",
+    "operation": "latest",
+    "hfwKey": "partner_client__c"
+  },
+  {
+    "key": "partner_tier__c",
+    "operation": "latest",
+    "hfwKey": "partner_tier__c"
+  },
+  {
+    "key": "partner_type__c",
+    "operation": "latest",
+    "hfwKey": "partner_type__c"
+  },
+  {
+    "key": "percent_through_term__c",
+    "operation": "latest",
+    "hfwKey": "percent_through_term__c"
+  },
+  {
+    "key": "performance_goals__c",
+    "operation": "latest",
+    "hfwKey": "performance_goals__c"
+  },
+  { "key": "plans__c", "operation": "latest", "hfwKey": "plans__c" },
+  {
+    "key": "possible_use_cases_why_it_s_a_good_fit__c",
+    "operation": "latest",
+    "hfwKey": "possible_use_cases_why_it_s_a_good_fit__c"
+  },
+  {
+    "key": "primary_broker__c",
+    "operation": "latest",
+    "hfwKey": "primary_broker__c"
+  },
+  {
+    "key": "priorities_goals__c",
+    "operation": "latest",
+    "hfwKey": "priorities_goals__c"
+  },
+  {
+    "key": "product_lines_purchased__c",
+    "operation": "latest",
+    "hfwKey": "product_lines_purchased__c"
+  },
+  {
+    "key": "product_min_start",
+    "operation": "latest",
+    "hfwKey": "product_min_start"
+  },
+  {
+    "key": "psm_assigned_date__c",
+    "operation": "latest",
+    "hfwKey": "psm_assigned_date__c"
+  },
+  { "key": "psm_notes__c", "operation": "latest", "hfwKey": "psm_notes__c" },
+  {
+    "key": "recent_news_trends__c",
+    "operation": "latest",
+    "hfwKey": "recent_news_trends__c"
+  },
+  { "key": "reference__c", "operation": "latest", "hfwKey": "reference__c" },
+  {
+    "key": "reference_contact__c",
+    "operation": "latest",
+    "hfwKey": "reference_contact__c"
+  },
+  {
+    "key": "reference_date__c",
+    "operation": "latest",
+    "hfwKey": "reference_date__c"
+  },
+  {
+    "key": "reference_externally__c",
+    "operation": "latest",
+    "hfwKey": "reference_externally__c"
+  },
+  {
+    "key": "referred_by__c",
+    "operation": "latest",
+    "hfwKey": "referred_by__c"
+  },
+  {
+    "key": "renewable_amount__c",
+    "operation": "latest",
+    "hfwKey": "renewable_amount__c"
+  },
+  {
+    "key": "renewal_date_psm_entered__c",
+    "operation": "latest",
+    "hfwKey": "renewal_date_psm_entered__c"
+  },
+  {
+    "key": "renewal_date_workflow_stamped__c",
+    "operation": "latest",
+    "hfwKey": "renewal_date_workflow_stamped__c"
+  },
+  {
+    "key": "restricted_dependents__c",
+    "operation": "latest",
+    "hfwKey": "restricted_dependents__c"
+  },
+  {
+    "key": "revenue_range__c",
+    "operation": "latest",
+    "hfwKey": "revenue_range__c"
+  },
+  {
+    "key": "salesforce_customer_tier",
+    "operation": "latest",
+    "hfwKey": "salesforce_customer_tier"
+  },
+  {
+    "key": "sdr_meeting_set_with_lead__c",
+    "operation": "latest",
+    "hfwKey": "sdr_meeting_set_with_lead__c"
+  },
+  {
+    "key": "send_welcome_emails",
+    "operation": "latest",
+    "hfwKey": "send_welcome_emails"
+  },
+  {
+    "key": "send_welcome_emails__all_",
+    "operation": "latest",
+    "hfwKey": "send_welcome_emails__all_"
+  },
+  {
+    "key": "send_welcome_emails_internal_",
+    "operation": "latest",
+    "hfwKey": "send_welcome_emails_internal_"
+  },
+  {
+    "key": "service_launch_new__c",
+    "operation": "latest",
+    "hfwKey": "service_launch_new__c"
+  },
+  {
+    "key": "services_to_be_launched__c",
+    "operation": "latest",
+    "hfwKey": "services_to_be_launched__c"
+  },
+  {
+    "key": "sign_up_code__c",
+    "operation": "latest",
+    "hfwKey": "sign_up_code__c"
+  },
+  { "key": "site", "operation": "latest", "hfwKey": "site" },
+  {
+    "key": "social_media_reference__c",
+    "operation": "latest",
+    "hfwKey": "social_media_reference__c"
+  },
+  {
+    "key": "spanish_preferred__c",
+    "operation": "latest",
+    "hfwKey": "spanish_preferred__c"
+  },
+  {
+    "key": "spanish_preferred_details__c",
+    "operation": "latest",
+    "hfwKey": "spanish_preferred_details__c"
+  },
+  {
+    "key": "speak_on_behalf_of_headspace__c",
+    "operation": "latest",
+    "hfwKey": "speak_on_behalf_of_headspace__c"
+  },
+  {
+    "key": "speak_with_prospective_customers__c",
+    "operation": "latest",
+    "hfwKey": "speak_with_prospective_customers__c"
+  },
+  {
+    "key": "specifics_on_lead_source__c",
+    "operation": "latest",
+    "hfwKey": "specifics_on_lead_source__c"
+  },
+  { "key": "subsidiary__c", "operation": "latest", "hfwKey": "subsidiary__c" },
+  {
+    "key": "success_failures__c",
+    "operation": "latest",
+    "hfwKey": "success_failures__c"
+  },
+  {
+    "key": "target_account_2019__c",
+    "operation": "latest",
+    "hfwKey": "target_account_2019__c"
+  },
+  {
+    "key": "target_account__c",
+    "operation": "latest",
+    "hfwKey": "target_account__c"
+  },
+  { "key": "tax_id__c", "operation": "latest", "hfwKey": "tax_id__c" },
+  {
+    "key": "team_all_hands_presentation_webinar__c",
+    "operation": "latest",
+    "hfwKey": "team_all_hands_presentation_webinar__c"
+  },
+  {
+    "key": "tech_savviness__c",
+    "operation": "latest",
+    "hfwKey": "tech_savviness__c"
+  },
+  {
+    "key": "terminusaccountlists__c",
+    "operation": "latest",
+    "hfwKey": "terminusaccountlists__c"
+  },
+  {
+    "key": "terminusaccountlistsupdatedmomentutc__c",
+    "operation": "latest",
+    "hfwKey": "terminusaccountlistsupdatedmomentutc__c"
+  },
+  {
+    "key": "themed_webinars__c",
+    "operation": "latest",
+    "hfwKey": "themed_webinars__c"
+  },
+  {
+    "key": "third_party_administrator__c",
+    "operation": "latest",
+    "hfwKey": "third_party_administrator__c"
+  },
+  {
+    "key": "title_match_accounts__c",
+    "operation": "latest",
+    "hfwKey": "title_match_accounts__c"
+  },
+  {
+    "key": "total_active_revenue__c",
+    "operation": "latest",
+    "hfwKey": "total_active_revenue__c"
+  },
+  {
+    "key": "total_active_seat_months__c",
+    "operation": "latest",
+    "hfwKey": "total_active_seat_months__c"
+  },
+  {
+    "key": "total_active_seats__c",
+    "operation": "latest",
+    "hfwKey": "total_active_seats__c"
+  },
+  {
+    "key": "total_covered_lives__c",
+    "operation": "latest",
+    "hfwKey": "total_covered_lives__c"
+  },
+  {
+    "key": "total_won_recurring_revenue__c",
+    "operation": "latest",
+    "hfwKey": "total_won_recurring_revenue__c"
+  },
+  {
+    "key": "trending_intent__c",
+    "operation": "latest",
+    "hfwKey": "trending_intent__c"
+  },
+  {
+    "key": "twitter_handle__c",
+    "operation": "latest",
+    "hfwKey": "twitter_handle__c"
+  },
+  {
+    "key": "type_of_employer__c",
+    "operation": "latest",
+    "hfwKey": "type_of_employer__c"
+  },
+  {
+    "key": "type_of_plan__c",
+    "operation": "latest",
+    "hfwKey": "type_of_plan__c"
+  },
+  {
+    "key": "uniquewebvisitorsrolling30__c",
+    "operation": "latest",
+    "hfwKey": "uniquewebvisitorsrolling30__c"
+  },
+  {
+    "key": "us_only_account__c",
+    "operation": "latest",
+    "hfwKey": "us_only_account__c"
+  },
+  {
+    "key": "virtual_meditation_session__c",
+    "operation": "latest",
+    "hfwKey": "virtual_meditation_session__c"
+  },
+  {
+    "key": "voluntary_benefits__c",
+    "operation": "latest",
+    "hfwKey": "voluntary_benefits__c"
+  },
+  {
+    "key": "webvisitdatauptodateasof__c",
+    "operation": "latest",
+    "hfwKey": "webvisitdatauptodateasof__c"
+  },
+  {
+    "key": "webvisitsrolling30__c",
+    "operation": "latest",
+    "hfwKey": "webvisitsrolling30__c"
+  },
+  {
+    "key": "what_of_covered_lives_own_a_smartphone__c",
+    "operation": "latest",
+    "hfwKey": "what_of_covered_lives_own_a_smartphone__c"
+  },
+  {
+    "key": "whitelisting_it_contact__c",
+    "operation": "latest",
+    "hfwKey": "whitelisting_it_contact__c"
+  },
+  {
+    "key": "worker_type__c",
+    "operation": "latest",
+    "hfwKey": "worker_type__c"
+  },
+  {
+    "key": "facebook_company_page",
+    "operation": "latest",
+    "hfwKey": "facebook_company_page"
+  },
+  { "key": "facebookfans", "operation": "latest", "hfwKey": "facebookfans" },
+  {
+    "key": "googleplus_page",
+    "operation": "latest",
+    "hfwKey": "googleplus_page"
+  },
+  {
+    "key": "linkedin_company_page",
+    "operation": "latest",
+    "hfwKey": "linkedin_company_page"
+  },
+  { "key": "linkedinbio", "operation": "latest", "hfwKey": "linkedinbio" },
+  { "key": "twitterbio", "operation": "latest", "hfwKey": "twitterbio" },
+  {
+    "key": "twitterfollowers",
+    "operation": "latest",
+    "hfwKey": "twitterfollowers"
+  },
+  { "key": "twitterhandle", "operation": "latest", "hfwKey": "twitterhandle" },
+  {
+    "key": "age_groups__corrected_",
+    "operation": "latest",
+    "hfwKey": "age_groups__c"
+  },
+  {
+    "key": "english_as_a_2nd_language__corrected_",
+    "operation": "latest",
+    "hfwKey": "english_as_a_2nd_language__c"
+  },
+  {
+    "key": "income_levels__corrected_",
+    "operation": "latest",
+    "hfwKey": "income_levels__c"
+  },
+  {
+    "key": "campaign__c",
+    "operation": "latest",
+    "hfwKey": "campaign__account_"
+  },
+  { "key": "abm_opt_in", "operation": "latest", "hfwKey": "abm_opt_in__c" },
+  {
+    "key": "auto_price_increase_5__c",
+    "operation": "latest",
+    "hfwKey": "price_increase_5_"
+  },
+  {
+    "key": "auto_renew__c",
+    "operation": "latest",
+    "hfwKey": "auto_renew_account"
+  },
+  {
+    "key": "total_minutes_meditated_lifetime__c",
+    "operation": "latest",
+    "hfwKey": "company_minutes_meditated"
+  },
+  {
+    "key": "meditations_completed_lifetime__c",
+    "operation": "latest",
+    "hfwKey": "company_meditations_completed__lifetime_"
+  },
+  {
+    "key": "account_status",
+    "operation": "latest",
+    "hfwKey": "account_status__c"
+  },
+  {
+    "key": "alert_psm_email_sent__c",
+    "operation": "latest",
+    "hfwKey": "alert_csm_email_sent"
+  },
+  {
+    "key": "send_pilot_welcome_emails_all__c",
+    "operation": "latest",
+    "hfwKey": "send_pilot_welcome_emails_all_"
+  },
+  {
+    "key": "send_pilot_welcome_emails_drip__c",
+    "operation": "latest",
+    "hfwKey": "send_pilot_welcome_emails_drip_"
+  },
+  {
+    "key": "send_pre_launch_email__c",
+    "operation": "latest",
+    "hfwKey": "send_pre_launch_email"
+  },
+  {
+    "key": "headspace_org_location_reporting",
+    "operation": "latest",
+    "hfwKey": "headspace_org"
+  },
+  {
+    "key": "territory__c",
+    "operation": "latest",
+    "hfwKey": "account_territory_c"
+  },
+  {
+    "key": "naics_code__corrected_",
+    "operation": "latest",
+    "hfwKey": "naics_code__c"
+  },
+  {
+    "key": "date_last_onboard_mail_sent__c",
+    "operation": "latest",
+    "hfwKey": "date_last_onboard_mail_sent"
+  },
+  {
+    "key": "do_not_send_renewal_emails__c",
+    "operation": "latest",
+    "hfwKey": "do_not_send_renewal_emails"
+  },
+  {
+    "key": "enrollment_email_language__c",
+    "operation": "latest",
+    "hfwKey": "enrollment_email_language"
+  },
+  {
+    "key": "onboard_emails_sent__c",
+    "operation": "latest",
+    "hfwKey": "onboard_emails_sent"
+  },
+  {
+    "key": "publicity_rights__c",
+    "operation": "latest",
+    "hfwKey": "publicity_rights"
+  },
+  { "key": "renewal_url__c", "operation": "latest", "hfwKey": "renewal_url" },
+  {
+    "key": "sync_to_hubspot__account_",
+    "operation": "latest",
+    "hfwKey": "sync_to_hubspot_account__c"
+  }
+]
