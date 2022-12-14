@@ -45,16 +45,20 @@ export default class HubSpotCompanies_BO {
           const dataStored = await gingerCompanies.insertCompanies(
             dataToInsert
           );
-          Logger.debug('companies stored', { dataStored });
-          // eslint-disable-next-line no-console
-          console.log('companies stored');
+          if (dataStored.length > 0) {
+            Logger.debug('companies stored', { dataStored });
+            // eslint-disable-next-line no-console
+            console.log('companies stored');
+          }
 
           const dataUpdated = await gingerCompanies.updateCompanies(
             dataToUpdate
           );
-          Logger.debug('companies updated', { dataUpdated });
-          // eslint-disable-next-line no-console
-          console.log('companies updated');
+          if (dataUpdated.length > 0) {
+            Logger.debug('companies updated', { dataUpdated });
+            // eslint-disable-next-line no-console
+            console.log('companies updated');
+          }
 
           if (data.paging.next.after) {
             loopHF4Companies(data.paging.next.after);
@@ -141,7 +145,9 @@ export default class HubSpotCompanies_BO {
       const mappingProp = mappingProps.filter((prop) => prop.key === key);
       if (mappingProp.length === 0) continue loop;
       const keyHFW =
-        key in objectHFW ? key : (mappingProp.at(0)?.hfwKey as string);
+        key in objectHFW.properties
+          ? key
+          : (mappingProp.at(0)?.hfwKey as string);
       const latest =
         date1 > date2
           ? objectGinger.properties[key]

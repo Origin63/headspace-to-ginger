@@ -48,11 +48,6 @@
   },
   { "key": "name", "operation": "latest", "hfwKey": "name" },
   {
-    "key": "notes_next_activity_date",
-    "operation": "latest",
-    "hfwKey": "notes_next_activity_date"
-  },
-  {
     "key": "numberofemployees",
     "operation": "latest",
     "hfwKey": "numberofemployees"
@@ -268,6 +263,7 @@
     "operation": "latest",
     "hfwKey": "conversational_name__c"
   },
+  { "key": "csm", "operation": "latest", "hfwKey": "csm" },
   {
     "key": "current_enrolled_members__c",
     "operation": "latest",
@@ -364,16 +360,6 @@
     "key": "employee_comm_channels__c",
     "operation": "latest",
     "hfwKey": "employee_comm_channels__c"
-  },
-  {
-    "key": "employee_lead_form_tier__c",
-    "operation": "latest",
-    "hfwKey": "employee_lead_form_tier__c"
-  },
-  {
-    "key": "employees_form__c",
-    "operation": "latest",
-    "hfwKey": "employees_form__c"
   },
   {
     "key": "employer_hq__c",

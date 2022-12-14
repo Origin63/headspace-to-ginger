@@ -30,21 +30,4 @@ export default class Utils {
     }
     return chunks;
   };
-
-  static getPropValue = (
-    value1: number | string | boolean,
-    value2: number | string | boolean,
-    option: 'sum' | 'oldest' | 'latest'
-  ) => {
-    switch (option) {
-      case 'sum':
-        return +value1 + +value2;
-
-      case 'latest':
-        return;
-
-      case 'oldest':
-        return;
-    }
-  };
 }

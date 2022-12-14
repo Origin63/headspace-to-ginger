@@ -13,6 +13,21 @@ interface Companies extends Pagination {
   results: Result[];
 }
 
+interface BatchResponse {
+  status: string;
+  results: Result[];
+  requestedAt: string;
+  startedAt: string;
+  completedAt: string;
+  links: Links;
+}
+
+interface Links {
+  additionalProp1: string;
+  additionalProp2: string;
+  additionalProp3: string;
+}
+
 export default class HubSpotCompanies {
   private path = 'crm/v3/objects/companies';
   private token: string;
@@ -63,7 +78,9 @@ export default class HubSpotCompanies {
     }
   };
 
-  insertCompanies = async (dataToInsert: InsertCompanies[]) => {
+  insertCompanies = async (
+    dataToInsert: InsertCompanies[]
+  ): Promise<BatchResponse[]> => {
     const dataChunked = Utils.getDataChunked(dataToInsert);
     return Promise.all(
       dataChunked.map(async (element) => {
@@ -84,7 +101,9 @@ export default class HubSpotCompanies {
     );
   };
 
-  updateCompanies = async (dataToUpdate: UpdateCompanies[]) => {
+  updateCompanies = async (
+    dataToUpdate: UpdateCompanies[]
+  ): Promise<BatchResponse[]> => {
     const dataChunked = Utils.getDataChunked(dataToUpdate);
     return Promise.all(
       dataChunked.map(async (element) => {
