@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/app.js",
-    "start:dev": "nodemon",
+    "dev": "nodemon",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "emails": "ts-node ./src/businessObjects/HubSpotEmails_BO.ts"
