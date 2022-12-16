@@ -51,4 +51,13 @@ export default class Utils {
       );
     });
   };
+
+  static readJsonFile(path : string) {
+    try {
+      const result = fs.readFileSync(path);
+      return JSON.parse(result.toString());
+    } catch (error) {
+      return false;
+    }
+  }
 }
