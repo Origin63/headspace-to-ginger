@@ -22,9 +22,6 @@ export default class HubSpotCompanies_BO {
         process.env.HFW_TOKEN as string
       );
 
-      const gingerCompanies = new HubSpotCompanies(
-        process.env.GINGER_TOKEN_QA as string
-      );
       this.loadOwners();
       const loopHF4Companies = async (after?: string) => {
         try {
@@ -42,29 +39,15 @@ export default class HubSpotCompanies_BO {
               companiesWithProperDataSet
             );
 
-          const dataStored = await gingerCompanies.insertCompanies(
-            dataToInsert
-          );
-          if (dataStored.length > 0) {
-            Logger.debug('companies stored', { dataStored });
-            // eslint-disable-next-line no-console
-            console.log('companies stored');
-          }
+          this.createBatchCompany(dataToInsert);
 
-          const dataUpdated = await gingerCompanies.updateCompanies(
-            dataToUpdate
-          );
-          if (dataUpdated.length > 0) {
-            Logger.debug('companies updated', { dataUpdated });
-            // eslint-disable-next-line no-console
-            console.log('companies updated');
-          }
+          this.updateBatchCompany(dataToUpdate);
 
           if (data.paging.next.after) {
             loopHF4Companies(data.paging.next.after);
           }
         } catch (error) {
-          throw new Error(error as string);
+          Utils.saveFile('_errorloopHF4Companies.txt', error);
         }
       };
 
@@ -225,6 +208,42 @@ export default class HubSpotCompanies_BO {
       this.gingerOwners = await gingerOwnersInstance.getOwners();
     } catch (error) {
       Logger.error(error);
+    }
+  };
+
+  static createBatchCompany = async (dataToInsert: InsertCompanies[]) => {
+    try {
+      if (dataToInsert.length === 0) return;
+      const gingerCompanies = new HubSpotCompanies(
+        process.env.GINGER_TOKEN_QA as string
+      );
+
+      const dataStored = await gingerCompanies.insertCompanies(dataToInsert);
+      if (dataStored.length > 0) {
+        Logger.debug('companies stored', { dataStored });
+        // eslint-disable-next-line no-console
+        console.log('companies stored');
+      }
+    } catch (error) {
+      Utils.saveFile('_edataToInsert.json', JSON.stringify(dataToInsert));
+    }
+  };
+
+  static updateBatchCompany = async (dataToUpdate: UpdateCompanies[]) => {
+    try {
+      if (dataToUpdate.length === 0) return;
+      const gingerCompanies = new HubSpotCompanies(
+        process.env.GINGER_TOKEN_QA as string
+      );
+
+      const dataUpdated = await gingerCompanies.updateCompanies(dataToUpdate);
+      if (dataUpdated.length > 0) {
+        Logger.debug('companies updated', { dataUpdated });
+        // eslint-disable-next-line no-console
+        console.log('companies updated');
+      }
+    } catch (error) {
+      Utils.saveFile('_edataToUpdate.json', JSON.stringify(dataToUpdate));
     }
   };
 }

@@ -1,3 +1,6 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import { cwd } from 'process';
 export default class Utils {
   static splitFullname = (fullname: string) => {
     const nameSplitted = fullname.split(' ');
@@ -29,5 +32,23 @@ export default class Utils {
       chunks.push(dataArray.slice(i, i + chunkSize));
     }
     return chunks;
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static saveFile = (fileName: string, data: any) => {
+    const fileStream = fs.createWriteStream(
+      path.join(cwd(), '/storage', fileName),
+      { flags: 'a' }
+    );
+
+    fileStream.pipe(data);
+
+    // This is here incase any errors occur
+    fileStream.on('error', function (err) {
+      fs.writeFileSync(
+        path.join(cwd(), '/storage', 'error.txt'),
+        JSON.stringify(err)
+      );
+    });
   };
 }
