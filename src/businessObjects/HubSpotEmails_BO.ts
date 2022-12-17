@@ -160,7 +160,8 @@ class HubSpotEmails_BO {
       for (let key in emails) {
         await this.delay(300);
         const existingEmail: email = this.recordExists(await gingerHubspotController.checkIfEmailExists('hs_email_subject', key));
-        const properties = emails[key].properties;
+        let properties = emails[key].properties;
+        properties.hs_timestamp = new Date(emails[key].updatedAt).toISOString();
         let gingerRecord: email | undefined;
         if (existingEmail.id) {
           const {

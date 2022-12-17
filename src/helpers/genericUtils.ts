@@ -57,7 +57,7 @@ export default class Utils {
       const result = fs.readFileSync(path);
       return JSON.parse(result.toString());
     } catch (error) {
-      return false;
+      return;
     }
   }
 }
