@@ -196,7 +196,7 @@ class HubSpotEmails_BO {
         }
       }
     } catch (error) {
-      throw error;
+     console.log(error);
     }
   }
 
