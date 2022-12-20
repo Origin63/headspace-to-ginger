@@ -5,11 +5,13 @@ import {
   associationObjectType,
   emailProperties
 } from "../types/HS-Emails";
+import * as dotenv from 'dotenv';
 
 export default class HubSpotEmails {
   path: string;
   token: string | undefined;
   constructor(token: string | undefined) {
+    dotenv.config();
     this.token = token;
     this.path = "https://api.hubapi.com/crm/v3/objects/emails";
   }

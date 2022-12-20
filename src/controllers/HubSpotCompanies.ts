@@ -8,6 +8,7 @@ import {
 } from '../types/HS-Companies';
 import Pagination from '../types/HS-Pagination';
 import { HSPayload, Result, SearchResponse } from '../types/HS-Search';
+import * as dotenv from 'dotenv';
 
 interface Companies extends Pagination {
   results: Result[];
@@ -34,6 +35,7 @@ export default class HubSpotCompanies {
   private accept = 'application/json';
 
   constructor(token: string) {
+    dotenv.config();
     this.token = token;
   }
 

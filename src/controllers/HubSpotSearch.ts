@@ -1,6 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import { processRequest } from '../helpers/genericAxios';
 import { HSPayload, SearchResponse } from '../types/HS-Search';
+import * as dotenv from 'dotenv';
 
 type HSObjects =
   | 'companies'
@@ -21,6 +22,7 @@ type HSObjects =
 export default class HubSpotSearch {
   token: string;
   constructor(token: string) {
+    dotenv.config();
     this.token = token;
   }
 

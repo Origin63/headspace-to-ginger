@@ -21,6 +21,7 @@ type Filter = {
     | 'NOT_CONTAINS_TOKEN';
   highValue?: string;
   value?: string | number;
+  values?: number[] | string[]
 };
 
 type Sort = {

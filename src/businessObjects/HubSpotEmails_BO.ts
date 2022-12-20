@@ -14,7 +14,9 @@ import * as path from 'path';
 import {
   cwd
 } from 'process';
-import { contact } from "../types/HS-Contacts";
+import {
+  contact
+} from "../types/HS-Contacts";
 class HubSpotEmails_BO {
 
   /**
@@ -41,6 +43,8 @@ class HubSpotEmails_BO {
     results: []
   }
 
+  static done: any = {};
+
   /**
    * Argument to be passed in console to execute a single function
    */
@@ -59,15 +63,19 @@ class HubSpotEmails_BO {
    */
   static async getAllEmailsPaginated(url: null | string = null) {
     try {
-      if(!url) {
+      if (!url) {
         const data: localEmailData = Utils.readJsonFile(path.join(cwd(), '/src/data', 'emails.json'));
-        if (Object.keys(data).length > 0 && !data['paging']) {
+        if (data && Object.keys(data).length > 0 && !data['paging']) {
           return data;
         }
 
-        if(data['paging']) {
+        if (data && data['paging']) {
           this.data = data;
-          const {nex: {link}} = data['paging'];
+          const {
+            next: {
+              link
+            }
+          } = data['paging'];
           url = link;
         }
       }
@@ -82,13 +90,13 @@ class HubSpotEmails_BO {
 
       this.data = {
         ...this.data,
-        ...await this.reArrangeHubspotEmailObjectAndSetIdAsKey(results), 
+        ...await this.reArrangeHubspotEmailObjectAndSetIdAsKey(results),
         paging: paging
       };
 
       console.log(Object.keys(this.data).length);
       fs.writeFileSync(path.join(cwd(), '/src/data', 'emails.json'), JSON.stringify(this.data));
-    
+
       if (paging) {
         await this.getAllEmailsPaginated(paging.next.link);
       }
@@ -126,7 +134,7 @@ class HubSpotEmails_BO {
           const {
             toObjectId
           } = results[i];
-  
+
           const contactData = await hubspotContactsController.getContact(toObjectId)
           const {
             properties: {
@@ -154,49 +162,60 @@ class HubSpotEmails_BO {
 
   static async migrateEmails() {
     try {
+      const done = JSON.parse(fs.readFileSync(path.join(cwd(), '/src/data', 'emails_done.json')).toString());
       const gingerHubspotController = new HubSpotEmails(process.env.HSTOKENJESUS_GINGER);
       const emails: localEmailData = await this.getAllEmailsPaginated();
       console.log(Object.keys(emails).length + ' records.');
+      this.done = done;
       for (let key in emails) {
-        await this.delay(300);
-        const existingEmail: email = this.recordExists(await gingerHubspotController.checkIfEmailExists('hs_email_subject', key));
-        let properties = emails[key].properties;
-        properties.hs_timestamp = new Date(emails[key].updatedAt).toISOString();
-        let gingerRecord: email | undefined;
-        if (existingEmail.id) {
-          const {
-            id
-          } = existingEmail;
-          console.log('updating email');
-          gingerRecord = await gingerHubspotController.updateEmail(id, properties);
-        } else {
-          console.log('creating email');
-          gingerRecord = await gingerHubspotController.createEmail(properties);
-        }
-
-        //Associations
-        const gingerHubspotContactController = new HubSpotContacts(process.env.HSTOKENJESUS_GINGER);
-        const associatedEmails: string[] = emails[key].associated_contacts as string[];
-
-        for (let i = 0; i < associatedEmails.length; i++) {
-          const existingContact: email = this.recordExists(await gingerHubspotContactController.checkIfContactExistsByEmail(associatedEmails[i]));
-          if (existingContact.id && gingerRecord) {
-            console.log('starting associations');
-            const {
-              id
-            } = gingerRecord;
-            await gingerHubspotController.associateRecords({
-              objectType: 'email',
-              id: id
-            }, {
-              objectType: 'contact',
-              id: existingContact.id
-            }, 'email_to_contact');
+        try {
+          if (!done[key]) {
+            await this.delay(300);
+            const existingEmail: email = this.recordExists(await gingerHubspotController.checkIfEmailExists('hs_email_subject', key));
+            let properties = emails[key].properties;
+            properties.hs_timestamp = new Date(emails[key].updatedAt).toISOString();
+            let gingerRecord: email | undefined;
+            if (existingEmail.id) {
+              const {
+                id
+              } = existingEmail;
+              console.log('updating email');
+              gingerRecord = await gingerHubspotController.updateEmail(id, properties);
+            } else {
+              console.log('creating email');
+              gingerRecord = await gingerHubspotController.createEmail(properties);
+            }
+  
+            //Associations
+            const gingerHubspotContactController = new HubSpotContacts(process.env.HSTOKENJESUS_GINGER);
+            const associatedEmails: string[] = emails[key].associated_contacts as string[];
+  
+            for (let i = 0; i < associatedEmails.length; i++) {
+              const existingContact: email = this.recordExists(await gingerHubspotContactController.checkIfContactExistsByEmail(associatedEmails[i]));
+              if (existingContact.id && gingerRecord) {
+                console.log('starting associations');
+                const {
+                  id
+                } = gingerRecord;
+                await gingerHubspotController.associateRecords({
+                  objectType: 'email',
+                  id: id
+                }, {
+                  objectType: 'contact',
+                  id: existingContact.id
+                }, 'email_to_contact');
+              }
+            }
+  
+            this.done[key] = key;
+            fs.writeFileSync(path.join(cwd(), '/src/data', 'emails_done.json'), JSON.stringify(this.done));
           }
+        } catch (error) {
+          console.log(error);
         }
       }
     } catch (error) {
-     console.log(error);
+      throw error;
     }
   }
 

@@ -1,29 +1,26 @@
 export interface contact {
   id: string | number,
-    createdAt: string,
-    updatedAt: string,
-    archived: boolean,
-    properties: contactProperties
+  createdAt: string,
+  updatedAt: string,
+  archived: boolean,
+  properties: Properties,
+  associated_companies?: string[]
+}
+
+export interface Properties {
+  [key: string]: any;
 }
 
 export type updateContact = {
   id: number | string;
-  properties: contact;
+  properties: Properties;
+  associated_companies?: string[]
 };
 
 export type insertContact = {
-  properties: contact;
+  properties: Properties;
+  associated_companies?: string[]
 };
-
-export interface contactProperties {
-  firstname: string;
-  lastname: string;
-  company?: string;
-  email: string;
-  phone: string;
-  jobtitle?: string;
-  hubspot_owner_id?: number;
-}
 
 export interface associationObjectType {
   id: string | number,
@@ -53,4 +50,8 @@ export interface associationResults {
         link: string
       }
     }
+}
+
+export interface localContactData {
+  [key: number | string]: any
 }

@@ -1,6 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import Pagination from '../types/HS-Pagination';
 import { processRequest } from '../helpers/genericAxios';
+import * as dotenv from 'dotenv';
 
 interface Owner {
   id: string;
@@ -29,6 +30,7 @@ export default class HubSpotOwners {
   private path = 'crm/v3/owners';
 
   constructor(token: string) {
+    dotenv.config();
     this.token = token;
   }
 
