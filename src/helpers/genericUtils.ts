@@ -35,20 +35,18 @@ export default class Utils {
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static saveFile = (fileName: string, data: any) => {
-    const fileStream = fs.createWriteStream(
-      path.join(cwd(), '/storage', fileName),
-      { flags: 'a' }
-    );
-
-    fileStream.pipe(data);
-
-    // This is here incase any errors occur
-    fileStream.on('error', function (err) {
-      fs.writeFileSync(
-        path.join(cwd(), '/storage', 'error.txt'),
-        JSON.stringify(err)
-      );
+  static saveFile = async (fileName: string, data: any) => {
+    const filePath = path.join(cwd(), '/storage', fileName);
+    fs.stat(filePath, (error, stats) => {
+      if (error) {
+        fs.writeFile(filePath, JSON.stringify(data), (error) => {
+          if (error) this.saveFile('logs/error.txt', error);
+        });
+      } else {
+        fs.appendFile(filePath, JSON.stringify(data), (error) => {
+          if (error) this.saveFile('logs/error.txt', error);
+        });
+      }
     });
   };
 
