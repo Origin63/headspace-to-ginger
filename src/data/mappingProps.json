@@ -362,6 +362,16 @@
     "hfwKey": "employee_comm_channels__c"
   },
   {
+    "key": "employee_lead_form_tier__c",
+    "operation": "latest",
+    "hfwKey": "employee_lead_form_tier__c"
+  },
+  {
+    "key": "employees_form__c",
+    "operation": "latest",
+    "hfwKey": "employees_form__c"
+  },
+  {
     "key": "employer_hq__c",
     "operation": "latest",
     "hfwKey": "employer_hq__c"

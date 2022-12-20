@@ -16,44 +16,79 @@ export default class HubSpotCompanies_BO {
 
   static HFWOwners: OwnersResult;
   static gingerOwners: OwnersResult;
+  static hfwCompanies: InstanceType<typeof HubSpotCompanies>;
+  static gingerCompanies: InstanceType<typeof HubSpotCompanies>;
+  static gingerSearch: InstanceType<typeof HubSpotSearch>;
+  static hfwOwnersInstance: InstanceType<typeof HubSpotOwners>;
+  static gingerOwnersInstance: InstanceType<typeof HubSpotOwners>;
+
+  static loadInstances = () => {
+    this.hfwCompanies = new HubSpotCompanies(process.env.HFW_TOKEN as string);
+    this.hfwOwnersInstance = new HubSpotOwners(process.env.HFW_TOKEN as string);
+
+    this.gingerCompanies = new HubSpotCompanies(
+      process.env.GINGER_TOKEN_QA as string
+    );
+    this.gingerSearch = new HubSpotSearch(
+      process.env.GINGER_TOKEN_QA as string
+    );
+    this.gingerOwnersInstance = new HubSpotOwners(
+      process.env.GINGER_TOKEN_QA as string
+    );
+  };
+
+  static loadOwners = async () => {
+    try {
+      this.HFWOwners = await this.hfwOwnersInstance.getOwners();
+
+      this.gingerOwners = await this.gingerOwnersInstance.getOwners();
+    } catch (error) {
+      Logger.error(error);
+    }
+  };
+
   static migrateCompanies = async (): Promise<void> => {
     try {
-      const hfwCompanies = new HubSpotCompanies(
-        process.env.HFW_TOKEN as string
-      );
-
+      this.loadInstances();
       this.loadOwners();
+      const allCompanies: Result[] = [];
       const loopHF4Companies = async (after?: string) => {
         try {
-          const data = await hfwCompanies.getCompanies(
+          const data = await this.hfwCompanies.getCompanies(
             this.propsHFWToLookUp,
             after
           );
-
           const companiesWithProperDataSet = data.results.filter(
             (company) =>
               company.properties.domain && company.properties.industry
           );
-          const [dataToInsert, dataToUpdate] =
-            await this.checkCompanyAndSetSeparateValues(
-              companiesWithProperDataSet
-            );
+          allCompanies.push(...companiesWithProperDataSet);
 
-          this.createBatchCompany(dataToInsert);
+          // eslint-disable-next-line no-console
+          console.log('%d companies stored', allCompanies.length);
 
-          this.updateBatchCompany(dataToUpdate);
-
-          if (data.paging.next.after) {
-            loopHF4Companies(data.paging.next.after);
+          if (data.paging) {
+            await loopHF4Companies(data.paging.next.after);
           }
+          return Promise.resolve(true);
         } catch (error) {
-          Utils.saveFile('_errorloopHF4Companies.txt', error);
+          Utils.saveFile('error/loopHF4Companies.txt', JSON.stringify(error));
+          return Promise.reject(false);
         }
       };
+      const completed = await loopHF4Companies();
+      if (completed) {
+        const [dataToInsert, dataToUpdate] =
+          await this.checkCompanyAndSetSeparateValues(allCompanies);
 
-      loopHF4Companies();
+        this.createBatchCompany(dataToInsert);
+
+        this.updateBatchCompany(dataToUpdate);
+      }
     } catch (error) {
-      return Promise.reject(error);
+      Logger.error('Error in HubSpotCompanies_BO.migrateCompanies', {
+        message: error,
+      });
     }
   };
 
@@ -63,14 +98,14 @@ export default class HubSpotCompanies_BO {
     try {
       const dataToInsert: InsertCompanies[] = [];
       const dataToUpdate: UpdateCompanies[] = [];
-      const hubSpotSearch = new HubSpotSearch(
-        process.env.GINGER_TOKEN_QA as string
-      );
-      for (let index = 0; index < companies.length; index++) {
-        const company = companies[index];
-        await Utils.delay(1000);
 
-        const dataInGinger = await hubSpotSearch.search('companies', {
+      for (let index = 0; index < companies.length; index++) {
+        // eslint-disable-next-line no-console
+        console.log('processing %d of %d', index, companies.length);
+        const company = companies[index];
+        await Utils.delay(300);
+
+        const dataInGinger = await this.gingerSearch.search('companies', {
           filterGroups: [
             {
               filters: [
@@ -163,6 +198,7 @@ export default class HubSpotCompanies_BO {
       }
     }
     objectMapped['hubspot_owner_id'] = gingerOwner?.id || null;
+    objectMapped['headspace_for_work_id'] = objectHFW.id;
     return objectMapped;
   };
 
@@ -192,58 +228,41 @@ export default class HubSpotCompanies_BO {
       };
     }
     objectMapped['hubspot_owner_id'] = gingerOwner?.id || null;
+    objectMapped['headspace_for_work_id'] = objectHFW.id;
     return objectMapped;
-  };
-
-  static loadOwners = async () => {
-    try {
-      const hfwOwnersInstance = new HubSpotOwners(
-        process.env.HFW_TOKEN as string
-      );
-      this.HFWOwners = await hfwOwnersInstance.getOwners();
-
-      const gingerOwnersInstance = new HubSpotOwners(
-        process.env.GINGER_TOKEN_QA as string
-      );
-      this.gingerOwners = await gingerOwnersInstance.getOwners();
-    } catch (error) {
-      Logger.error(error);
-    }
   };
 
   static createBatchCompany = async (dataToInsert: InsertCompanies[]) => {
     try {
       if (dataToInsert.length === 0) return;
-      const gingerCompanies = new HubSpotCompanies(
-        process.env.GINGER_TOKEN_QA as string
-      );
 
-      const dataStored = await gingerCompanies.insertCompanies(dataToInsert);
+      const dataStored = await this.gingerCompanies.insertCompanies(
+        dataToInsert
+      );
       if (dataStored.length > 0) {
         Logger.debug('companies stored', { dataStored });
         // eslint-disable-next-line no-console
         console.log('companies stored');
       }
     } catch (error) {
-      Utils.saveFile('_edataToInsert.json', JSON.stringify(dataToInsert));
+      Utils.saveFile('error/dataToInsert.json', JSON.stringify(dataToInsert));
     }
   };
 
   static updateBatchCompany = async (dataToUpdate: UpdateCompanies[]) => {
     try {
       if (dataToUpdate.length === 0) return;
-      const gingerCompanies = new HubSpotCompanies(
-        process.env.GINGER_TOKEN_QA as string
-      );
 
-      const dataUpdated = await gingerCompanies.updateCompanies(dataToUpdate);
+      const dataUpdated = await this.gingerCompanies.updateCompanies(
+        dataToUpdate
+      );
       if (dataUpdated.length > 0) {
         Logger.debug('companies updated', { dataUpdated });
         // eslint-disable-next-line no-console
         console.log('companies updated');
       }
     } catch (error) {
-      Utils.saveFile('_edataToUpdate.json', JSON.stringify(dataToUpdate));
+      Utils.saveFile('error/dataToUpdate.json', JSON.stringify(dataToUpdate));
     }
   };
 }

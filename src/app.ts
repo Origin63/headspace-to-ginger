@@ -4,16 +4,20 @@ import Logger from './helpers/genericLogger';
 
 class App {
   static init = () => {
-    dotenv.config();
-    Logger.info('starting project');
-    this.migrateCompanies();
+    try {
+      dotenv.config();
+      Logger.info('starting project');
+      this.migrateCompanies();
+    } catch (error) {
+      Logger.error('Error in App.init', { message: error });
+    }
   };
 
   static migrateCompanies = () => {
     try {
       HubSpotCompanies_BO.migrateCompanies();
     } catch (error) {
-      Logger.error('Error migrating companies', { message: error });
+      Logger.error('Error in App.migrateCompanies', { message: error });
     }
   };
 }
