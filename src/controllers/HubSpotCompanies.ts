@@ -35,7 +35,6 @@ export default class HubSpotCompanies {
   private accept = 'application/json';
 
   constructor(token: string) {
-    dotenv.config();
     this.token = token;
   }
 

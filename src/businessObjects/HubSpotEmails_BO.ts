@@ -119,7 +119,7 @@ class HubSpotEmails_BO {
       const id: string | number = jsObject[key].id;
       newObject[id] = jsObject[key];
       newObject[id]['properties']['hs_email_subject'] += ` | HeadSpace For Work ID: ${id}`;
-      newObject[id]['properties']['hs_timestamp'] = new Date(newObject[id]['updatedAt']).toISOString();
+      newObject[id]['properties']['hs_timestamp'] = new Date(newObject[id]['createdAt']).toISOString();
       delete newObject[id]['properties']['hs_createdate'];
       delete newObject[id]['properties']['hs_object_id'];
       newObject[id]['associated_contacts'] = [];

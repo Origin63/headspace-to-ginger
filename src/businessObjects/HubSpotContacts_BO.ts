@@ -1,6 +1,7 @@
 import HubspotContacts from '../controllers/HubSpotContacts';
 import HubSpotSearch from '../controllers/HubSpotSearch';
 import Utils from '../helpers/genericUtils';
+import * as dotenv from 'dotenv';
 
 import {
   Result
@@ -30,7 +31,7 @@ import HubspotAssociations from '../controllers/HubSpotAssociations';
 
 export default class HubspotContacts_BO {
   static propsGingerToLookup =
-    'do_not_sync_to_sf,email,email_unique__c,numberofemployees,employee_lead_form_tier,exclude_from_evergreen,executive_sponsor_email,hs_facebook_click_id,fax,field_of_study,first_marketing_qualified_lead_date,firstname,followercount,gdpr_opt_in,gender,ginger_id,hs_google_click_id,graduation_date,headspace_org,company_size2,how_would_you_like_to_partner_,hr_contact_s_role,hr_contact_s_first_name,hr_contact_s_last_name,hr_contact_s_phone_number,hsuserid,hubspot_workflow_status,i_am_a_n____refer_your_company,incoming_notes__c,industry,case_studies,interviews_with_media,speaking_opportunities_on_behalf_of_headspace_e_g_live_events_,invitations_to_speak_with_prospective_customers_we_ll_contact_you_first,is_customer_admin,is_lead_,job_function,job_level,jobtitle,journey,kloutscoregeneral,last_activity_sf_,notes_last_updated,hs_email_last_open_date,lastname,hs_latest_source,hs_latest_source_timestamp,lead_owner_name,lead_owner_role_name,leadsource,lead_source_detail,lead_status_detail,lead_type,lifecyclestage,linkedinbio,campaign_medium,campaign_source,linkedin_company_size,linkedinconnections,linkedin_lead_gen_form,linkedin_url__c,logo_on_headspace_website_s_,logo_on_publicly_available_marketing_materials_e_g_headspace_program_overview_,logo_on_sales_materials_e_g_sales_presentations_,marital_status,marketing_qualified_date_time,member_gratitude,member_intention,hs_content_membership_notes,mention_of_company_name_within_online_advertising,mention_of_relationship_with_media,message,military_status,mobilephone,monthly_price_per_license__c,most_recent_cadence_last_completed_step,mql_new,mql_type,nhs_executive_sponsor_name,numemployees,number_of_licenses__c,on_v3,salesforceopportunitystage,opt_in,hs_analytics_source,hs_analytics_source_data_1,hs_analytics_source_data_2,partnership,partnership_budget,partnership_opportunity_size,partnership_type,i_am_a_,hs_persona,phone_number,phone,zip,hs_language,primary_product_interest,province_chilipiper_,rating,referral_date,referred_by,relationship_status,role__c,salutation,school,score__c,send_welcome_emails_internal_,send_welcome_emails_to_admin_,seniority,source__c,start_date,state_chilipiper_,consultant_location,employer_hq,state,hs_content_membership_status,leadstatus,address,sync_to_hubspot__contact_,territory,hs_time_between_contact_creation_and_deal_close,hs_time_between_contact_creation_and_deal_creation,hs_time_to_move_from_lead_to_customer,hs_time_to_move_from_marketingqualifiedlead_to_customer,hs_time_to_move_from_opportunity_to_customer,hs_time_to_move_from_salesqualifiedlead_to_customer,hs_time_to_move_from_subscriber_to_customer,hs_timezone,trust_name,twitterbio,twitterprofilephoto,twitterhandle,type_of_contact,utm_campaign,utm_content,utm_medium,utm_source,utm_term,website,work_email';
+    'do_not_sync_to_sf,email,hubspot_owner_id,email_unique__c,numberofemployees,headspace_for_work_id,employee_lead_form_tier,exclude_from_evergreen,executive_sponsor_email,hs_facebook_click_id,fax,field_of_study,first_marketing_qualified_lead_date,firstname,followercount,gdpr_opt_in,gender,ginger_id,hs_google_click_id,graduation_date,headspace_org,company_size2,how_would_you_like_to_partner_,hr_contact_s_role,hr_contact_s_first_name,hr_contact_s_last_name,hr_contact_s_phone_number,hsuserid,hubspot_workflow_status,i_am_a_n____refer_your_company,incoming_notes__c,industry,case_studies,interviews_with_media,speaking_opportunities_on_behalf_of_headspace_e_g_live_events_,invitations_to_speak_with_prospective_customers_we_ll_contact_you_first,is_customer_admin,is_lead_,job_function,job_level,jobtitle,journey,kloutscoregeneral,last_activity_sf_,notes_last_updated,hs_email_last_open_date,lastname,hs_latest_source,hs_latest_source_timestamp,lead_owner_name,lead_owner_role_name,leadsource,lead_source_detail,lead_status_detail,lead_type,lifecyclestage,linkedinbio,campaign_medium,campaign_source,linkedin_company_size,linkedinconnections,linkedin_lead_gen_form,linkedin_url__c,logo_on_headspace_website_s_,logo_on_publicly_available_marketing_materials_e_g_headspace_program_overview_,logo_on_sales_materials_e_g_sales_presentations_,marital_status,marketing_qualified_date_time,member_gratitude,member_intention,hs_content_membership_notes,mention_of_company_name_within_online_advertising,mention_of_relationship_with_media,message,military_status,mobilephone,monthly_price_per_license__c,most_recent_cadence_last_completed_step,mql_new,mql_type,nhs_executive_sponsor_name,numemployees,number_of_licenses__c,on_v3,salesforceopportunitystage,opt_in,hs_analytics_source,hs_analytics_source_data_1,hs_analytics_source_data_2,partnership,partnership_budget,partnership_opportunity_size,partnership_type,i_am_a_,hs_persona,phone_number,phone,zip,hs_language,primary_product_interest,province_chilipiper_,rating,referral_date,referred_by,relationship_status,role__c,salutation,school,score__c,send_welcome_emails_internal_,send_welcome_emails_to_admin_,seniority,source__c,start_date,state_chilipiper_,consultant_location,employer_hq,state,hs_content_membership_status,leadstatus,address,sync_to_hubspot__contact_,territory,hs_time_between_contact_creation_and_deal_close,hs_time_between_contact_creation_and_deal_creation,hs_time_to_move_from_lead_to_customer,hs_time_to_move_from_marketingqualifiedlead_to_customer,hs_time_to_move_from_opportunity_to_customer,hs_time_to_move_from_salesqualifiedlead_to_customer,hs_time_to_move_from_subscriber_to_customer,hs_timezone,trust_name,twitterbio,twitterprofilephoto,twitterhandle,type_of_contact,utm_campaign,utm_content,utm_medium,utm_source,utm_term,website,work_email';
 
   static propsHFWToLookUp =
     'do_not_sync_to_sf,email,email_unique__c,numberofemployees,employee_lead_form_tier,exclude_from_evergreen,executive_sponsor_email,hs_facebook_click_id,fax,field_of_study,first_marketing_qualified_lead_date,firstname,followercount,gdpr_opt_in,gender,ginger_id,hs_google_click_id,graduation_date,headspace_org,company_size2,how_would_you_like_to_partner_,hr_contact_s_role,hr_contact_s_first_name,hr_contact_s_last_name,hr_contact_s_phone_number,hsuserid,hubspot_workflow_status,i_am_a_n____refer_your_company,incoming_notes__c,industry,case_studies,interviews_with_media,speaking_opportunities_on_behalf_of_headspace_e_g_live_events_,invitations_to_speak_with_prospective_customers_we_ll_contact_you_first,is_customer_admin,is_lead_,job_function,job_level,jobtitle,journey,kloutscoregeneral,last_activity_sf_,notes_last_updated,hs_email_last_open_date,lastname,hs_latest_source,hs_latest_source_timestamp,lead_owner_name,lead_owner_role_name,leadsource,lead_source_detail,lead_status_detail,lead_type,lifecyclestage,linkedinbio,campaign_medium,campaign_source,linkedin_company_size,linkedinconnections,linkedin_lead_gen_form,linkedin_url__c,logo_on_headspace_website_s_,logo_on_publicly_available_marketing_materials_e_g_headspace_program_overview_,logo_on_sales_materials_e_g_sales_presentations_,marital_status,marketing_qualified_date_time,member_gratitude,member_intention,hs_content_membership_notes,mention_of_company_name_within_online_advertising,mention_of_relationship_with_media,message,military_status,mobilephone,monthly_price_per_license__c,most_recent_cadence_last_completed_step,mql_new,mql_type,nhs_executive_sponsor_name,numemployees,number_of_licenses__c,on_v3,salesforceopportunitystage,opt_in,hs_analytics_source,hs_analytics_source_data_1,hs_analytics_source_data_2,partnership,partnership_budget,partnership_opportunity_size,partnership_type,i_am_a_,hs_persona,phone_number,phone,zip,hs_language,primary_product_interest,province_chilipiper_,rating,referral_date,referred_by,relationship_status,role__c,salutation,school,score__c,send_welcome_emails_internal_,send_welcome_emails_to_admin_,seniority,source__c,start_date,state_chilipiper_,consultant_location,employer_hq,state,hs_content_membership_status,leadstatus,address,sync_to_hubspot__contact_,territory,hs_time_between_contact_creation_and_deal_close,hs_time_between_contact_creation_and_deal_creation,hs_time_to_move_from_lead_to_customer,hs_time_to_move_from_marketingqualifiedlead_to_customer,hs_time_to_move_from_opportunity_to_customer,hs_time_to_move_from_salesqualifiedlead_to_customer,hs_time_to_move_from_subscriber_to_customer,hs_timezone,trust_name,twitterbio,twitterprofilephoto,twitterhandle,type_of_contact,utm_campaign,utm_content,utm_medium,utm_source,utm_term,website,work_email,o63__contacts_for_migration';
@@ -39,15 +40,18 @@ export default class HubspotContacts_BO {
   static gingerOwners: OwnersResult;
 
   static data: localContactData = {};
-  static hubspotSearch: InstanceType < typeof HubSpotSearch > = new HubSpotSearch(process.env.HSTOKENJESUS_GINGER as string);
-  static hubspotAssociations: InstanceType < typeof HubspotAssociations > = new HubspotAssociations(process.env.HSTOKENJESUS_GINGER as string);
-  static hubspotContacts: InstanceType < typeof HubspotContacts > = new HubspotContacts(process.env.HSTOKENJESUS_HDFORWORK as string);
-  static hubspotCompanies: InstanceType < typeof HubSpotCompanies > = new HubSpotCompanies(process.env.HSTOKENJESUS_HDFORWORK as string);
+  static completed: any = {};
+  static hubspotSearch: InstanceType < typeof HubSpotSearch >
+    static hubspotAssociations: InstanceType < typeof HubspotAssociations >
+    static hubspotContacts: InstanceType < typeof HubspotContacts >
+    static hubspotCompanies: InstanceType < typeof HubSpotCompanies >
+    static h4wOwnersInstance: InstanceType < typeof HubSpotOwners >
+    static gingerOwnersInstance: InstanceType < typeof HubSpotOwners >
 
-  /**
-   * Argument to be passed in console to execute a single function
-   */
-  static ConsoleArgument: string = process.argv[2];
+    /**
+     * Argument to be passed in console to execute a single function
+     */
+    static ConsoleArgument: string = process.argv[2];
 
   static ConsoleFunctions: {
     [key: string]: CallableFunction
@@ -57,10 +61,23 @@ export default class HubspotContacts_BO {
     'count': this.countContacts.bind(this)
   };
 
+  static iteration: number = 0;
+
+  static loadInstances() {
+    dotenv.config();
+    this.hubspotSearch = new HubSpotSearch(process.env.HSTOKENJESUS_GINGER as string);
+    this.hubspotAssociations = new HubspotAssociations(process.env.HSTOKENJESUS_GINGER as string);
+    this.hubspotContacts = new HubspotContacts(process.env.HSTOKENJESUS_HDFORWORK as string);
+    this.hubspotCompanies = new HubSpotCompanies(process.env.HSTOKENJESUS_HDFORWORK as string);
+    this.h4wOwnersInstance = new HubSpotOwners(process.env.HSTOKENJESUS_HDFORWORK as string);
+    this.gingerOwnersInstance = new HubSpotOwners(process.env.HSTOKENJESUS_GINGER as string);
+  }
+
   static init() {
+    dotenv.config();
     const consoleFunction = this.ConsoleFunctions[this.ConsoleArgument];
     if (consoleFunction) {
-      consoleFunction();
+      consoleFunction(process.argv[3]);
     }
   }
 
@@ -70,21 +87,30 @@ export default class HubspotContacts_BO {
    */
   static async getAllContactsPaginated(url: null | string = null) {
     try {
- 
+      this.loadInstances();
       if (!url) {
-        const data: localContactData = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts.json'));
-        if (data && Object.keys(data).length > 0 && !data['paging']) {
-          return data;
+        this.data = Utils.readJsonFile(path.join(cwd(), '/src/data', `contacts-${this.iteration}.json`));
+
+
+        if (this.data && Object.keys(this.data).length > 0 && !this.data['paging']) {
+          return this.data;
         }
 
-        if (data && data['paging']) {
-          this.data = data;
+        if (this.data && this.data['paging']) {
           const {
             next: {
               link
             }
-          } = data['paging'];
+          } = this.data['paging'];
           url = link;
+
+          if (Object.keys(this.data).length > 70000) {
+            fs.writeFileSync(`contacts-${this.iteration}.json`, JSON.stringify(this.data));
+            this.iteration = this.iteration + 1;
+            this.data = {};
+            fs.writeFileSync(`contacts-${this.iteration}.json`, JSON.stringify(this.data));
+            await this.getAllContactsPaginated();
+          }
         }
       }
 
@@ -101,7 +127,7 @@ export default class HubspotContacts_BO {
       };
 
       console.log(Object.keys(this.data).length);
-      fs.writeFileSync(path.join(cwd(), '/src/data', 'contacts.json'), JSON.stringify(this.data));
+      fs.writeFileSync(path.join(cwd(), '/src/data', `contacts-${this.iteration}.json`), JSON.stringify(this.data));
 
       if (paging) {
         await this.getAllContactsPaginated(paging.next.link);
@@ -130,61 +156,60 @@ export default class HubspotContacts_BO {
               objectType: 'contact',
               id: id
             });
+
             const results: contactAssociations[] = contactAssociations.results;
-    
+
             for (let i = 0; i < results.length; i++) {
-              if (contactAssociations.results.length > 0) {
-                const {
-                  toObjectId
-                } = results[i];
-    
-                const id: string = toObjectId.toString();
-                const companyData = await this.hubspotCompanies.getCompany(+toObjectId)
-                const {
-                  properties: {
-                    headspace_for_work_id
-                  }
-                } = companyData;
-    
-                if (headspace_for_work_id) {
-                  newObject[id]['associated_companies']?.push(headspace_for_work_id)
-                }
-              }
+              const {
+                toObjectId
+              } = results[i];
+
+              toObjectId && newObject[id]['associated_companies']?.push(toObjectId?.toString())
             }
-          } 
+          }
         } catch (error) {
           await Utils.delay(10000);
           key--;
         }
       }
-      return newObject; 
+      return newObject;
     } catch (error) {
       console.log('there was an error, reproducing the same step again');
     }
   }
 
   static countContacts() {
-    const data: localContactData = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts.json'));
-    console.log(Object.keys(data).length);
+    const data: localContactData = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts-0.json'));
+    Object.values(data).forEach(element => console.log(element.associated_companies));
   }
 
-  static async migrateContacts(): Promise < void > {
+  static async migrateContacts(filename: string = 'contacts-0'): Promise < void > {
+    console.log(filename);
     try {
+      this.loadInstances();
       const gingerContacts = new HubspotContacts(
         process.env.HSTOKENJESUS_GINGER as string
       );
 
-      this.loadOwners();
+      this.data = Utils.readJsonFile(path.join(cwd(), '/src/data', `${filename}.json`));
+      const chuncks = Utils.getDataChunked(Object.values(this.data), 30);
+      await this.loadOwners();
 
-      this.data = await this.getAllContactsPaginated();
-      const [dataToInsert, dataToUpdate] =
-      await this.checkContactAndSetSeparateValues(
-        this.data
-      );
+      for (let index = 0; index < chuncks.length; index++) {
+        try {
+          const chunck = chuncks[index];
+          const [dataToInsert, dataToUpdate] =
+          await this.checkContactAndSetSeparateValues(
+            chunck
+          );
 
-      this.createBatchContact(gingerContacts, dataToInsert);
+          await this.createBatchContact(gingerContacts, dataToInsert);
 
-      this.updateBatchContact(gingerContacts, dataToUpdate);
+          await this.updateBatchContact(gingerContacts, dataToUpdate);
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
     } catch (error) {
       Utils.saveFile('_errorloopHF4Companies.txt', error);
@@ -193,48 +218,52 @@ export default class HubspotContacts_BO {
   }
 
   static checkContactAndSetSeparateValues = async (
-    contacts: localContactData
+    contacts: any[]
   ): Promise < [insertContact[], updateContact[]] > => {
     try {
       const dataToInsert: insertContact[] = [];
       const dataToUpdate: updateContact[] = [];
-      const hubSpotSearch = new HubSpotSearch(
-        process.env.HSTOKENJESUS_GINGER as string
-      );
+      const completed = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts_done.json'));
 
-      for (let index in contacts) {
-        console.log('processing %d of %d', index, Object.keys(contacts).length);
-        const contact = contacts[index];
+      for (let index = 0; index < contacts.length; index++) {
+        try {
+          console.log('processing %d of %d', index, Object.keys(contacts).length);
+          const contact = contacts[index];
+          if (!completed[contact.id]) {
+            const dataInGinger = await this.hubspotSearch.search('contacts', {
+              filterGroups: [{
+                filters: [{
+                  propertyName: 'email',
+                  operator: 'EQ',
+                  value: contact.properties.email,
+                }],
+              }, ],
+              properties: this.propsGingerToLookup.split(','),
+            });
 
-        const dataInGinger = await hubSpotSearch.search('contacts', {
-          filterGroups: [{
-            filters: [{
-              propertyName: 'headspace_for_work_id',
-              operator: 'EQ',
-              value: contact.properties.headspace_for_work_id,
-            }],
-          }, ],
-          properties: this.propsGingerToLookup.split(','),
-        });
-        if (dataInGinger.total > 0) {
-          const {
-            [0]: gingerObject
-          } = dataInGinger.results;
+            if (dataInGinger.total > 0) {
+              const {
+                [0]: gingerObject
+              } = dataInGinger.results;
 
-          dataToUpdate.push({
-            id: Number(dataInGinger.results.at(0)?.id),
-            properties: await this.mapPropValue(gingerObject, contact)
-          });
-        } else {
-          dataToInsert.push({
-            properties: await this.mapObjectValue(contact)
-          });
+              dataToUpdate.push({
+                id: Number(dataInGinger.results[0]?.id),
+                properties: await this.mapPropValue(gingerObject, contact)
+              });
+            } else {
+              dataToInsert.push({
+                properties: await this.mapObjectValue(contact)
+              });
+            }
+          }
+        } catch (error) {
+          console.log(error)
         }
       }
       return Promise.resolve([dataToInsert, dataToUpdate]);
     } catch (error) {
       return Promise.reject(
-        'Error in HubSpotCompanies_BO.checkCompanyAndSetSeparateValues'
+        'Error in HubSpotContacts_BO.checkCompanyAndSetSeparateValues'
       );
     }
   };
@@ -263,7 +292,7 @@ export default class HubspotContacts_BO {
       const keyHFW =
         key in objectHFW.properties ?
         key :
-        (mappingProp.at(0)?.hfwKey as string);
+        (mappingProp[0]?.hfwKey as string);
       const latest =
         date1 > date2 ?
         objectGinger.properties[key] :
@@ -276,7 +305,7 @@ export default class HubspotContacts_BO {
       const smallest = +objectGinger.properties[key] < +objectHFW.properties[keyHFW] ? objectGinger.properties[key] : objectHFW.properties[keyHFW];
 
 
-      switch (mappingProp.at(0)?.operation) {
+      switch (mappingProp[0]?.operation) {
         case 'sum':
           objectMapped = {
             ...objectMapped,
@@ -287,7 +316,7 @@ export default class HubspotContacts_BO {
         case 'latest':
           objectMapped = {
             ...objectMapped,
-            [key]: latest,
+            [key]: latest
           };
           break;
         case 'oldest':
@@ -308,9 +337,17 @@ export default class HubspotContacts_BO {
             [key]: smallest,
           };
           break;
+        default:
+          objectMapped = {
+            ...objectMapped,
+            [key]: objectHFW.properties[keyHFW],
+          };
+          break;
       }
+
     }
-    objectMapped['hubspot_owner_id'] = gingerOwner?.id || null;
+    objectMapped['hubspot_owner_id'] = objectGinger.properties.hubspot_owner_id ? objectGinger.properties.hubspot_owner_id : gingerOwner?.id || null;
+    objectMapped['headspace_for_work_id'] = objectHFW.id;
     return objectMapped;
   };
 
@@ -329,31 +366,28 @@ export default class HubspotContacts_BO {
       HFWOwner?.email as string
     );
     loop: for await (const keyHFW of Object.keys(objectHFW.properties)) {
+
       const mappingProp = mappingProps.filter((prop) => prop.hfwKey === keyHFW);
       if (mappingProp.length === 0) continue loop;
-      const key = mappingProp.at(0)?.key as string;
+      const key = mappingProp[0]?.key as string;
 
       objectMapped = {
         ...objectMapped,
-        [key]: objectHFW.properties[keyHFW] === 'PROSPECT' ?
-          'Prospect' : objectHFW.properties[keyHFW],
+        [key]: objectHFW.properties[keyHFW]
       };
     }
     objectMapped['hubspot_owner_id'] = gingerOwner?.id || null;
+    objectMapped['headspace_for_work_id'] = objectHFW.id;
     return objectMapped;
   };
 
   static loadOwners = async () => {
     try {
-      const hfwOwnersInstance = new HubSpotOwners(
-        process.env.HFW_TOKEN as string
-      );
-      this.HFWOwners = await hfwOwnersInstance.getOwners();
 
-      const gingerOwnersInstance = new HubSpotOwners(
-        process.env.GINGER_TOKEN_QA as string
-      );
-      this.gingerOwners = await gingerOwnersInstance.getOwners();
+      this.HFWOwners = await this.h4wOwnersInstance.getOwners();
+
+      this.gingerOwners = await this.gingerOwnersInstance.getOwners();
+
     } catch (error) {
       Logger.error(error);
     }
@@ -365,10 +399,11 @@ export default class HubspotContacts_BO {
 
       const dataStored = await instance.insertContacts(dataToInsert);
       if (dataStored.length > 0) {
-
+        console.log('starting associations');
         for (let index = 0; index < dataStored.length; index++) {
           const element = dataStored[index];
-          this.makeAssociations(element.results);
+          await this.makeAssociations(element.results);
+          this.storeCompletedElements(element.results);
         }
 
         Logger.debug('companies stored', {
@@ -388,6 +423,14 @@ export default class HubspotContacts_BO {
 
       const dataUpdated = await instance.updateContacts(dataToUpdate);
       if (dataUpdated.length > 0) {
+
+        console.log('starting associations');
+        for (let index = 0; index < dataUpdated.length; index++) {
+          const element = dataUpdated[index];
+          await this.makeAssociations(element.results);
+          this.storeCompletedElements(element.results);
+        }
+
         Logger.debug('companies updated', {
           dataUpdated
         });
@@ -399,14 +442,24 @@ export default class HubspotContacts_BO {
     }
   };
 
-  static async makeAssociations(data: Result[]) {
+  static storeCompletedElements(data: Result[]) {
+    for (let index = 0; index < data.length; index++) {
+      const element = data[index];
+      const h4wElement = this.data[element.properties.headspace_for_work_id];
+      if (h4wElement) {
+        this.completed[h4wElement.id] = h4wElement.id;
+        console.log('saving');
+        fs.writeFileSync(path.join(cwd(), '/src/data', `contacts_done.json`), JSON.stringify(this.completed));
+      }
+    }
+  }
 
+  static async makeAssociations(data: Result[]) {
     for (let index = 0; index < data.length; index++) {
       const element = data[index];
       const h4wElement = this.data[element.properties.headspace_for_work_id];
       if (h4wElement) {
         const companies = h4wElement.associated_companies;
-
         const {
           results
         } = await this.hubspotSearch.search('companies', {
@@ -428,13 +481,12 @@ export default class HubspotContacts_BO {
             }, {
               objectType: 'companies',
               id: company.id
-            });
+            }, 'contact_to_company');
             console.log('association for contact %d completed with company %d', element.id, company.id);
           }
         }
       }
     }
-
   }
 }
 

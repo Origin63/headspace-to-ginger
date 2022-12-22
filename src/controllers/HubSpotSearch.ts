@@ -22,7 +22,6 @@ type HSObjects =
 export default class HubSpotSearch {
   token: string;
   constructor(token: string) {
-    dotenv.config();
     this.token = token;
   }
 

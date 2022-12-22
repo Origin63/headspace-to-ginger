@@ -4,7 +4,6 @@ import Utils from '../helpers/genericUtils';
 import { InsertCompanies } from '../types/HS-Companies';
 import { associationObjectType, insertContact, updateContact } from '../types/HS-Contacts';
 import { HSPayload, Result, SearchResponse } from '../types/HS-Search';
-import * as dotenv from 'dotenv';
 
 interface BatchResponse {
   status: string;
@@ -27,7 +26,6 @@ export default class HubSpotContacts {
   contentType = 'application/json';
   private accept = 'application/json';
   constructor(token: string | undefined) {
-    dotenv.config();
     this.token = token;
     this.path = 'https://api.hubapi.com/crm/v3/objects/contacts';
   }
@@ -142,7 +140,7 @@ export default class HubSpotContacts {
       dataChunked.map(async (element) => {
         const axiosRequest: AxiosRequestConfig = {
           method: 'POST',
-          url: `${process.env.HS_BASE_URL}/${this.path}/batch/create`,
+          url: `${this.path}/batch/create`,
           data: {
             inputs: element,
           },
@@ -165,7 +163,7 @@ export default class HubSpotContacts {
       dataChunked.map(async (element) => {
         const axiosRequest: AxiosRequestConfig = {
           method: 'POST',
-          url: `${process.env.HS_BASE_URL}/${this.path}/batch/update`,
+          url: `${this.path}/batch/update`,
           data: {
             inputs: element,
           },

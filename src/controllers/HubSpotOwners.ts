@@ -30,7 +30,6 @@ export default class HubSpotOwners {
   private path = 'crm/v3/owners';
 
   constructor(token: string) {
-    dotenv.config();
     this.token = token;
   }
 
