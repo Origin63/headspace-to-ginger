@@ -11,6 +11,17 @@
     "hfwKey": "converted_total_won_recurring_revenue_"
   },
   { "key": "country", "operation": "latest", "hfwKey": "country" },
+  { "key": "h4w_create_date", "operation": "default", "hfwKey": "createdate" },
+  {
+    "key": "h4w_original_source_data_1",
+    "operation": "default",
+    "hfwKey": "hs_analytics_source_data_1"
+  },
+  {
+    "key": "h4w_original_source_data_2",
+    "operation": "default",
+    "hfwKey": "hs_analytics_source_data_2"
+  },
   { "key": "description", "operation": "latest", "hfwKey": "description" },
   { "key": "domain", "operation": "latest", "hfwKey": "domain" },
   {
