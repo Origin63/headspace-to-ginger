@@ -85,12 +85,11 @@ export default class HubspotContacts_BO {
    * Get All Paginated Emails From Hubspot In a Single Call
    * @return Array of Records
    */
-  static async getAllContactsPaginated(url: null | string = null) {
+  static async getAllContactsPaginated(url: null | string = null, next: boolean = false) {
     try {
       this.loadInstances();
-      if (!url) {
+      if (!url || next) {
         this.data = Utils.readJsonFile(path.join(cwd(), '/src/data', `contacts-${this.iteration}.json`));
-
 
         if (this.data && Object.keys(this.data).length > 0 && !this.data['paging']) {
           return this.data;
@@ -107,9 +106,9 @@ export default class HubspotContacts_BO {
           if (Object.keys(this.data).length > 70000) {
             fs.writeFileSync(`contacts-${this.iteration}.json`, JSON.stringify(this.data));
             this.iteration = this.iteration + 1;
-            this.data = {};
+            this.data = {paging: this.data.paging || null};
             fs.writeFileSync(`contacts-${this.iteration}.json`, JSON.stringify(this.data));
-            await this.getAllContactsPaginated();
+            await this.getAllContactsPaginated(url, true);
           }
         }
       }
@@ -179,8 +178,9 @@ export default class HubspotContacts_BO {
   }
 
   static countContacts() {
-    const data: localContactData = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts-0.json'));
-    Object.values(data).forEach(element => console.log(element.associated_companies));
+    const data: localContactData = Utils.readJsonFile(path.join(cwd(), '/src/data', 'emails.json'));
+
+    console.log(Object.keys(data).length)
   }
 
   static async migrateContacts(filename: string = 'contacts-0'): Promise < void > {
