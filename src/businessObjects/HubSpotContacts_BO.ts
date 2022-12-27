@@ -104,10 +104,8 @@ export default class HubspotContacts_BO {
           url = link;
 
           if (Object.keys(this.data).length > 70000) {
-            fs.writeFileSync(`contacts-${this.iteration}.json`, JSON.stringify(this.data));
             this.iteration = this.iteration + 1;
             this.data = {paging: this.data.paging || null};
-            fs.writeFileSync(`contacts-${this.iteration}.json`, JSON.stringify(this.data));
             await this.getAllContactsPaginated(url, true);
           }
         }
