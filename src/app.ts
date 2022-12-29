@@ -9,8 +9,12 @@ class App {
       // this.migrateCompanies();
       HubSpotCompanies_BO.loadInstances();
       HubSpotCompanies_BO.loadData();
+
       const completed = await HubSpotCompanies_BO.fetchAllCompanies();
-      if (completed) await HubSpotCompanies_BO.migrateCompanies();
+      if (completed) {
+        console.log('companies saved');
+        await HubSpotCompanies_BO.migrateCompanies();
+      }
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Error in App.init', error);

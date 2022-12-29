@@ -15,7 +15,5 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:sonarjs/recommended"
   ],
-  "rules": {
-    "no-console": "warn"
-  }
+  "rules": {}
 }

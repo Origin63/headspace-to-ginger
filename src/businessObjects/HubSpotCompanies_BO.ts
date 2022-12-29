@@ -84,10 +84,10 @@ export default class HubSpotCompanies_BO {
         (company) => company.properties.domain && company.properties.industry
       );
       this.allCompanies.push(...companiesWithProperDataSet);
-      /*writeFileSync(
+      writeFileSync(
         join(cwd(), '/storage/data/companies.json'),
         JSON.stringify({ companies: this.allCompanies, paging })
-      );*/
+      );
       // eslint-disable-next-line no-console
       console.log('%d companies stored', this.allCompanies.length);
 
