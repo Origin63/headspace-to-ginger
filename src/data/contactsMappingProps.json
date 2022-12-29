@@ -1,0 +1,821 @@
+[{
+    "key": "administrator_",
+    "operation": "latest",
+    "hfwKey": "administrator_"
+  },
+  {
+    "key": "annualrevenue",
+    "operation": "biggest",
+    "hfwKey": "annualrevenue"
+  },
+  {
+    "key": "what_is_the_average_size_of_the_employer_you_work_with_",
+    "operation": "latest",
+    "hfwKey": "avg_size_of_employe"
+  },
+  {
+    "key": "notes",
+    "operation": "latest",
+    "hfwKey": "notes"
+  },
+  {
+    "key": "hs_buying_role",
+    "operation": "latest",
+    "hfwKey": "hs_buying_role"
+  },
+  {
+    "key": "utm_geo",
+    "operation": "latest",
+    "hfwKey": "utm_geo"
+  },
+  {
+    "key": "utm_size",
+    "operation": "latest",
+    "hfwKey": "utm_size"
+  },
+  {
+    "key": "campaign_status",
+    "operation": "latest",
+    "hfwKey": "campaign_status"
+  },
+  {
+    "key": "campaign_url__c",
+    "operation": "latest",
+    "hfwKey": "campaign_url__c"
+  },
+  {
+    "key": "city",
+    "operation": "latest",
+    "hfwKey": "city"
+  },
+  {
+    "key": "closedate",
+    "operation": "latest",
+    "hfwKey": "closedate"
+  },
+  {
+    "key": "company",
+    "operation": "latest",
+    "hfwKey": "company"
+  },
+  {
+    "key": "company_size",
+    "operation": "latest",
+    "hfwKey": "company_size"
+  },
+  {
+    "key": "hubspot_owner_id",
+    "operation": "latest",
+    "hfwKey": "hubspot_owner_id"
+  },
+  {
+    "key": "contract_start_date__c",
+    "operation": "oldest",
+    "hfwKey": "contract_start_date__c"
+  },
+  {
+    "key": "converted",
+    "operation": "latest",
+    "hfwKey": "converted"
+  },
+  {
+    "key": "country__chilipiper_",
+    "operation": "latest",
+    "hfwKey": "country_chilipiper_"
+  },
+  {
+    "key": "country",
+    "operation": "latest",
+    "hfwKey": "country"
+  },
+  {
+    "key": "h4w_create_date",
+    "operation": "oldest",
+    "hfwKey": "createdate"
+  },
+  {
+    "key": "date_of_birth",
+    "operation": "latest",
+    "hfwKey": "date_of_birth"
+  },
+  {
+    "key": "blog_default_hubspot_blog_7028302199_subscription",
+    "operation": "latest",
+    "hfwKey": "blog_default_hubspot_blog_5521086326_subscription"
+  },
+  {
+    "key": "degree",
+    "operation": "latest",
+    "hfwKey": "degree"
+  },
+  {
+    "key": "do_not_route",
+    "operation": "latest",
+    "hfwKey": "do_not_route"
+  },
+  {
+    "key": "do_not_sync_to_sf",
+    "operation": "latest",
+    "hfwKey": "do_not_sync_to_sf"
+  },
+  {
+    "key": "email",
+    "operation": "latest",
+    "hfwKey": "email"
+  },
+  {
+    "key": "email_unique__c",
+    "operation": "latest",
+    "hfwKey": "email_unique__c"
+  },
+  {
+    "key": "numberofemployees",
+    "operation": "latest",
+    "hfwKey": "numberofemployees"
+  },
+  {
+    "key": "employer_company_size",
+    "operation": "latest",
+    "hfwKey": "employee_lead_form_tier"
+  },
+  {
+    "key": "exclude_from_evergreen",
+    "operation": "latest",
+    "hfwKey": "exclude_from_evergreen"
+  },
+  {
+    "key": "executive_sponsor_email",
+    "operation": "latest",
+    "hfwKey": "executive_sponsor_email"
+  },
+  {
+    "key": "hs_facebook_click_id",
+    "operation": "biggest",
+    "hfwKey": "hs_facebook_click_id"
+  },
+  {
+    "key": "fax",
+    "operation": "latest",
+    "hfwKey": "fax"
+  },
+  {
+    "key": "field_of_study",
+    "operation": "latest",
+    "hfwKey": "field_of_study"
+  },
+  {
+    "key": "first_marketing_qualified_lead_date",
+    "operation": "oldest",
+    "hfwKey": "first_marketing_qualified_lead_date"
+  },
+  {
+    "key": "firstname",
+    "operation": "latest",
+    "hfwKey": "firstname"
+  },
+  {
+    "key": "followercount",
+    "operation": "latest",
+    "hfwKey": "followercount"
+  },
+  {
+    "key": "gdpr_opt_in",
+    "operation": "latest",
+    "hfwKey": "gdpr_opt_in"
+  },
+  {
+    "key": "gender",
+    "operation": "latest",
+    "hfwKey": "gender"
+  },
+  {
+    "key": "ginger_id",
+    "operation": "latest",
+    "hfwKey": "ginger_id"
+  },
+  {
+    "key": "hs_google_click_id",
+    "operation": "biggest",
+    "hfwKey": "hs_google_click_id"
+  },
+  {
+    "key": "graduation_date",
+    "operation": "latest",
+    "hfwKey": "graduation_date"
+  },
+  {
+    "key": "headspace_org",
+    "operation": "latest",
+    "hfwKey": "headspace_org"
+  },
+  {
+    "key": "employee_lead_form_tier",
+    "operation": "latest",
+    "hfwKey": "company_size2"
+  },
+  {
+    "key": "how_would_you_like_to_partner_",
+    "operation": "latest",
+    "hfwKey": "how_would_you_like_to_partner_"
+  },
+  {
+    "key": "hr_contact_s_role",
+    "operation": "latest",
+    "hfwKey": "hr_contact_s_role"
+  },
+  {
+    "key": "hr_contact_s_first_name",
+    "operation": "latest",
+    "hfwKey": "hr_contact_s_first_name"
+  },
+  {
+    "key": "hr_contact_s_last_name",
+    "operation": "latest",
+    "hfwKey": "hr_contact_s_last_name"
+  },
+  {
+    "key": "hr_contact_s_phone_number",
+    "operation": "latest",
+    "hfwKey": "hr_contact_s_phone_number"
+  },
+  {
+    "key": "hsuserid",
+    "operation": "oldest",
+    "hfwKey": "hsuserid"
+  },
+  {
+    "key": "hubspot_workflow_status",
+    "operation": "latest",
+    "hfwKey": "hubspot_workflow_status"
+  },
+  {
+    "key": "i_am_a_n____refer_your_company",
+    "operation": "latest",
+    "hfwKey": "i_am_a_n____refer_your_company"
+  },
+  {
+    "key": "incoming_notes__c",
+    "operation": "latest",
+    "hfwKey": "incoming_notes__c"
+  },
+  {
+    "key": "industry",
+    "operation": "latest",
+    "hfwKey": "industry"
+  },
+  {
+    "key": "case_studies",
+    "operation": "latest",
+    "hfwKey": "case_studies"
+  },
+  {
+    "key": "interviews_with_media",
+    "operation": "latest",
+    "hfwKey": "interviews_with_media"
+  },
+  {
+    "key": "speaking_opportunities_on_behalf_of_headspace_e_g_live_events_",
+    "operation": "latest",
+    "hfwKey": "speaking_opportunities_on_behalf_of_headspace_e_g_live_events_"
+  },
+  {
+    "key": "invitations_to_speak_with_prospective_customers_we_ll_contact_you_first",
+    "operation": "latest",
+    "hfwKey": "invitations_to_speak_with_prospective_customers_we_ll_contact_you_first"
+  },
+  {
+    "key": "is_customer_admin",
+    "operation": "latest",
+    "hfwKey": "is_customer_admin"
+  },
+  {
+    "key": "is_lead_",
+    "operation": "latest",
+    "hfwKey": "is_lead_"
+  },
+  {
+    "key": "job_function",
+    "operation": "latest",
+    "hfwKey": "job_function"
+  },
+  {
+    "key": "job_level",
+    "operation": "latest",
+    "hfwKey": "job_level"
+  },
+  {
+    "key": "jobtitle",
+    "operation": "latest",
+    "hfwKey": "jobtitle"
+  },
+  {
+    "key": "journey",
+    "operation": "latest",
+    "hfwKey": "journey"
+  },
+  {
+    "key": "kloutscoregeneral",
+    "operation": "latest",
+    "hfwKey": "kloutscoregeneral"
+  },
+  {
+    "key": "last_activity_sf_",
+    "operation": "latest",
+    "hfwKey": "last_activity_sf_"
+  },
+  {
+    "key": "notes_last_updated",
+    "operation": "latest",
+    "hfwKey": "notes_last_updated"
+  },
+  {
+    "key": "hs_email_last_open_date",
+    "operation": "latest",
+    "hfwKey": "hs_email_last_open_date"
+  },
+  {
+    "key": "lastname",
+    "operation": "latest",
+    "hfwKey": "lastname"
+  },
+  {
+    "key": "hs_latest_source",
+    "operation": "latest",
+    "hfwKey": "hs_latest_source"
+  },
+  {
+    "key": "hs_latest_source_timestamp",
+    "operation": "latest",
+    "hfwKey": "hs_latest_source_timestamp"
+  },
+  {
+    "key": "lead_owner_name",
+    "operation": "latest",
+    "hfwKey": "lead_owner_name"
+  },
+  {
+    "key": "lead_owner_role_name",
+    "operation": "latest",
+    "hfwKey": "lead_owner_role_name"
+  },
+  {
+    "key": "leadsource",
+    "operation": "oldest",
+    "hfwKey": "leadsource"
+  },
+  {
+    "key": "lead_source_detail",
+    "operation": "latest",
+    "hfwKey": "lead_source_detail"
+  },
+  {
+    "key": "disqualification_reason",
+    "operation": "latest",
+    "hfwKey": "lead_status_detail"
+  },
+  {
+    "key": "lead_type__c",
+    "operation": "latest",
+    "hfwKey": "lead_type"
+  },
+  {
+    "key": "lifecyclestage",
+    "operation": "latest",
+    "hfwKey": "lifecyclestage"
+  },
+  {
+    "key": "linkedinbio",
+    "operation": "latest",
+    "hfwKey": "linkedinbio"
+  },
+  {
+    "key": "campaign_medium",
+    "operation": "oldest",
+    "hfwKey": "campaign_medium"
+  },
+  {
+    "key": "campaign_source",
+    "operation": "oldest",
+    "hfwKey": "campaign_source"
+  },
+  {
+    "key": "linkedin_company_size",
+    "operation": "latest",
+    "hfwKey": "linkedin_company_size"
+  },
+  {
+    "key": "linkedinconnections",
+    "operation": "latest",
+    "hfwKey": "linkedinconnections"
+  },
+  {
+    "key": "linkedin_lead_gen_form",
+    "operation": "latest",
+    "hfwKey": "linkedin_lead_gen_form"
+  },
+  {
+    "key": "linkedin_url__c",
+    "operation": "latest",
+    "hfwKey": "linkedin_url__c"
+  },
+  {
+    "key": "logo_on_headspace_website_s_",
+    "operation": "latest",
+    "hfwKey": "logo_on_headspace_website_s_"
+  },
+  {
+    "key": "logo_on_publicly_available_marketing_materials_e_g_headspace_program_overview_",
+    "operation": "latest",
+    "hfwKey": "logo_on_publicly_available_marketing_materials_e_g_headspace_program_overview_"
+  },
+  {
+    "key": "logo_on_sales_materials_e_g_sales_presentations_",
+    "operation": "latest",
+    "hfwKey": "logo_on_sales_materials_e_g_sales_presentations_"
+  },
+  {
+    "key": "marital_status",
+    "operation": "latest",
+    "hfwKey": "marital_status"
+  },
+  {
+    "key": "marketing_qualified_date_time",
+    "operation": "oldest",
+    "hfwKey": "marketing_qualified_date_time"
+  },
+  {
+    "key": "member_gratitude",
+    "operation": "latest",
+    "hfwKey": "member_gratitude"
+  },
+  {
+    "key": "member_intention",
+    "operation": "latest",
+    "hfwKey": "member_intention"
+  },
+  {
+    "key": "hs_content_membership_notes",
+    "operation": "latest",
+    "hfwKey": "hs_content_membership_notes"
+  },
+  {
+    "key": "mention_of_company_name_within_online_advertising",
+    "operation": "latest",
+    "hfwKey": "mention_of_company_name_within_online_advertising"
+  },
+  {
+    "key": "mention_of_relationship_with_media",
+    "operation": "latest",
+    "hfwKey": "mention_of_relationship_with_media"
+  },
+  {
+    "key": "message",
+    "operation": "latest",
+    "hfwKey": "message"
+  },
+  {
+    "key": "military_status",
+    "operation": "latest",
+    "hfwKey": "military_status"
+  },
+  {
+    "key": "mobilephone",
+    "operation": "latest",
+    "hfwKey": "mobilephone"
+  },
+  {
+    "key": "monthly_price_per_license__c",
+    "operation": "latest",
+    "hfwKey": "monthly_price_per_license__c"
+  },
+  {
+    "key": "most_recent_cadence_last_completed_step",
+    "operation": "latest",
+    "hfwKey": "most_recent_cadence_last_completed_step"
+  },
+  {
+    "key": "mql",
+    "operation": "latest",
+    "hfwKey": "mql_new"
+  },
+  {
+    "key": "type_of_mql",
+    "operation": "latest",
+    "hfwKey": "mql_type"
+  },
+  {
+    "key": "nhs_executive_sponsor_name",
+    "operation": "latest",
+    "hfwKey": "nhs_executive_sponsor_name"
+  },
+  {
+    "key": "numemployees",
+    "operation": "latest",
+    "hfwKey": "numemployees"
+  },
+  {
+    "key": "number_of_licenses__c",
+    "operation": "latest",
+    "hfwKey": "number_of_licenses__c"
+  },
+  {
+    "key": "on_v3",
+    "operation": "latest",
+    "hfwKey": "on_v3"
+  },
+  {
+    "key": "salesforceopportunitystage",
+    "operation": "latest",
+    "hfwKey": "salesforceopportunitystage"
+  },
+  {
+    "key": "opt_in",
+    "operation": "latest",
+    "hfwKey": "opt_in"
+  },
+  {
+    "key": "hs_analytics_source",
+    "operation": "oldest",
+    "hfwKey": "hs_analytics_source"
+  },
+  {
+    "key": "hs_analytics_source_data_1",
+    "operation": "oldest",
+    "hfwKey": "hs_analytics_source_data_1"
+  },
+  {
+    "key": "hs_analytics_source_data_2",
+    "operation": "oldest",
+    "hfwKey": "hs_analytics_source_data_2"
+  },
+  {
+    "key": "partnership",
+    "operation": "latest",
+    "hfwKey": "partnership"
+  },
+  {
+    "key": "partnership_budget",
+    "operation": "latest",
+    "hfwKey": "partnership_budget"
+  },
+  {
+    "key": "partnership_opportunity_size",
+    "operation": "latest",
+    "hfwKey": "partnership_opportunity_size"
+  },
+  {
+    "key": "partnership_type",
+    "operation": "latest",
+    "hfwKey": "partnership_type"
+  },
+  {
+    "key": "i_am_a_",
+    "operation": "latest",
+    "hfwKey": "i_am_a_"
+  },
+  {
+    "key": "hs_persona",
+    "operation": "latest",
+    "hfwKey": "hs_persona"
+  },
+  {
+    "key": "phone_number",
+    "operation": "latest",
+    "hfwKey": "phone_number"
+  },
+  {
+    "key": "phone",
+    "operation": "latest",
+    "hfwKey": "phone"
+  },
+  {
+    "key": "zip",
+    "operation": "latest",
+    "hfwKey": "zip"
+  },
+  {
+    "key": "hs_language",
+    "operation": "latest",
+    "hfwKey": "hs_language"
+  },
+  {
+    "key": "primary_product_interest",
+    "operation": "latest",
+    "hfwKey": "primary_product_interest"
+  },
+  {
+    "key": "province__chilipiper_",
+    "operation": "latest",
+    "hfwKey": "province_chilipiper_"
+  },
+  {
+    "key": "rating",
+    "operation": "latest",
+    "hfwKey": "rating"
+  },
+  {
+    "key": "referral_date",
+    "operation": "oldest",
+    "hfwKey": "referral_date"
+  },
+  {
+    "key": "referred_by__c",
+    "operation": "latest",
+    "hfwKey": "referred_by"
+  },
+  {
+    "key": "relationship_status",
+    "operation": "latest",
+    "hfwKey": "relationship_status"
+  },
+  {
+    "key": "role__c",
+    "operation": "latest",
+    "hfwKey": "role__c"
+  },
+  {
+    "key": "salutation",
+    "operation": "latest",
+    "hfwKey": "salutation"
+  },
+  {
+    "key": "school",
+    "operation": "latest",
+    "hfwKey": "school"
+  },
+  {
+    "key": "score__c",
+    "operation": "latest",
+    "hfwKey": "score__c"
+  },
+  {
+    "key": "send_welcome_emails_internal_",
+    "operation": "latest",
+    "hfwKey": "send_welcome_emails_internal_"
+  },
+  {
+    "key": "send_welcome_emails_to_admin_",
+    "operation": "latest",
+    "hfwKey": "send_welcome_emails_to_admin_"
+  },
+  {
+    "key": "seniority",
+    "operation": "latest",
+    "hfwKey": "seniority"
+  },
+  {
+    "key": "source__c",
+    "operation": "latest",
+    "hfwKey": "source__c"
+  },
+  {
+    "key": "start_date",
+    "operation": "oldest",
+    "hfwKey": "start_date"
+  },
+  {
+    "key": "state__chilipiper_",
+    "operation": "latest",
+    "hfwKey": "state_chilipiper_"
+  },
+  {
+    "key": "state_picklist",
+    "operation": "latest",
+    "hfwKey": "consultant_location"
+  },
+  {
+    "key": "state_picklist_cloned_",
+    "operation": "latest",
+    "hfwKey": "employer_hq"
+  },
+  {
+    "key": "state",
+    "operation": "latest",
+    "hfwKey": "state"
+  },
+  {
+    "key": "hs_content_membership_status",
+    "operation": "latest",
+    "hfwKey": "hs_content_membership_status"
+  },
+  {
+    "key": "leadstatus",
+    "operation": "latest",
+    "hfwKey": "leadstatus"
+  },
+  {
+    "key": "address",
+    "operation": "latest",
+    "hfwKey": "address"
+  },
+  {
+    "key": "sync_to_hubspot__contact_",
+    "operation": "latest",
+    "hfwKey": "sync_to_hubspot__contact_"
+  },
+  {
+    "key": "territory",
+    "operation": "latest",
+    "hfwKey": "territory"
+  },
+  {
+    "key": "hs_time_between_contact_creation_and_deal_close",
+    "operation": "smallest",
+    "hfwKey": "hs_time_between_contact_creation_and_deal_close"
+  },
+  {
+    "key": "hs_time_between_contact_creation_and_deal_creation",
+    "operation": "smallest",
+    "hfwKey": "hs_time_between_contact_creation_and_deal_creation"
+  },
+  {
+    "key": "hs_time_to_move_from_lead_to_customer",
+    "operation": "smallest",
+    "hfwKey": "hs_time_to_move_from_lead_to_customer"
+  },
+  {
+    "key": "hs_time_to_move_from_marketingqualifiedlead_to_customer",
+    "operation": "smallest",
+    "hfwKey": "hs_time_to_move_from_marketingqualifiedlead_to_customer"
+  },
+  {
+    "key": "hs_time_to_move_from_opportunity_to_customer",
+    "operation": "smallest",
+    "hfwKey": "hs_time_to_move_from_opportunity_to_customer"
+  },
+  {
+    "key": "hs_time_to_move_from_salesqualifiedlead_to_customer",
+    "operation": "smallest",
+    "hfwKey": "hs_time_to_move_from_salesqualifiedlead_to_customer"
+  },
+  {
+    "key": "hs_time_to_move_from_subscriber_to_customer",
+    "operation": "smallest",
+    "hfwKey": "hs_time_to_move_from_subscriber_to_customer"
+  },
+  {
+    "key": "hs_timezone",
+    "operation": "latest",
+    "hfwKey": "hs_timezone"
+  },
+  {
+    "key": "trust_name",
+    "operation": "latest",
+    "hfwKey": "trust_name"
+  },
+  {
+    "key": "twitterbio",
+    "operation": "latest",
+    "hfwKey": "twitterbio"
+  },
+  {
+    "key": "twitterprofilephoto",
+    "operation": "latest",
+    "hfwKey": "twitterprofilephoto"
+  },
+  {
+    "key": "twitterhandle",
+    "operation": "latest",
+    "hfwKey": "twitterhandle"
+  },
+  {
+    "key": "type_of_contact__c",
+    "operation": "latest",
+    "hfwKey": "type_of_contact"
+  },
+  {
+    "key": "utm_campaign",
+    "operation": "latest",
+    "hfwKey": "utm_campaign"
+  },
+  {
+    "key": "utm_content",
+    "operation": "latest",
+    "hfwKey": "utm_content"
+  },
+  {
+    "key": "utm_medium",
+    "operation": "latest",
+    "hfwKey": "utm_medium"
+  },
+  {
+    "key": "utm_source",
+    "operation": "latest",
+    "hfwKey": "utm_source"
+  },
+  {
+    "key": "utm_term",
+    "operation": "latest",
+    "hfwKey": "utm_term"
+  },
+  {
+    "key": "website",
+    "operation": "latest",
+    "hfwKey": "website"
+  },
+  {
+    "key": "work_email",
+    "operation": "latest",
+    "hfwKey": "work_email"
+  }
+]

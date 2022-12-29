@@ -968,7 +968,7 @@
     "hfwKey": "revenue_range__c"
   },
   {
-    "key": "salesforce_customer_tier",
+    "key": "customer_tier__c",
     "operation": "latest",
     "hfwKey": "salesforce_customer_tier"
   },

@@ -7,10 +7,9 @@ import mappingProps from '../data/mappingProps.json';
 import Logger from '../helpers/genericLogger';
 import HubSpotOwners, { OwnersResult } from '../controllers/HubSpotOwners';
 
-type LookForCompanies = {
-  hasMore: boolean;
-  after?: string;
-};
+import { cwd } from 'process';
+import { join } from 'path';
+import { writeFileSync } from 'fs';
 
 export default class HubSpotCompanies_BO {
   static propsGingerToLookup =
@@ -26,28 +25,29 @@ export default class HubSpotCompanies_BO {
   static gingerSearch: InstanceType<typeof HubSpotSearch>;
   static hfwOwnersInstance: InstanceType<typeof HubSpotOwners>;
   static gingerOwnersInstance: InstanceType<typeof HubSpotOwners>;
-  static lookMoreCompanies: LookForCompanies = {
-    hasMore: true,
-    after: undefined,
-  };
+  static allCompanies: Result[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static companies: any;
 
   static loadInstances() {
     this.hfwCompanies = new HubSpotCompanies(process.env.HFW_TOKEN as string);
     this.hfwOwnersInstance = new HubSpotOwners(process.env.HFW_TOKEN as string);
 
     this.gingerCompanies = new HubSpotCompanies(
-      process.env.GINGER_TOKEN_QA as string
+      process.env.GINGER_TOKEN as string
     );
-    this.gingerSearch = new HubSpotSearch(
-      process.env.GINGER_TOKEN_QA as string
-    );
+    this.gingerSearch = new HubSpotSearch(process.env.GINGER_TOKEN as string);
     this.gingerOwnersInstance = new HubSpotOwners(
-      process.env.GINGER_TOKEN_QA as string
+      process.env.GINGER_TOKEN as string
     );
   }
 
-  static async loadOwners() {
+  static async loadData() {
     try {
+      this.companies = Utils.readJsonFile(
+        join(cwd(), 'storage/data/companies.json')
+      );
+
       this.HFWOwners = await this.hfwOwnersInstance.getOwners();
 
       this.gingerOwners = await this.gingerOwnersInstance.getOwners();
@@ -58,50 +58,9 @@ export default class HubSpotCompanies_BO {
 
   static async migrateCompanies(): Promise<void> {
     try {
-      this.loadInstances();
-      this.loadOwners();
-      const allCompanies: Result[] = [];
-      const loopHF4Companies = async (after?: string) => {
-        try {
-          const data = await this.hfwCompanies.getCompanies(
-            this.propsHFWToLookUp,
-            after
-          );
-          const companiesWithProperDataSet = data.results.filter(
-            (company) =>
-              company.properties.domain && company.properties.industry
-          );
-          allCompanies.push(...companiesWithProperDataSet);
-
-          // eslint-disable-next-line no-console
-          console.log('%d companies stored', allCompanies.length);
-
-          if (data.paging) {
-            this.lookMoreCompanies.after = data.paging.next.after;
-            allCompanies.length < 100 &&
-              (await loopHF4Companies(data.paging.next.after));
-          } else this.lookMoreCompanies.hasMore = false;
-
-          return Promise.resolve(true);
-        } catch (error) {
-          Utils.saveFile(
-            'logs/loopHF4Companies.txt',
-            JSON.stringify({
-              message: error,
-              after: this.lookMoreCompanies.after,
-            })
-          );
-          return Promise.reject(false);
-        }
-      };
-      do {
-        console.log(this.lookMoreCompanies);
-        const completed = await loopHF4Companies(this.lookMoreCompanies.after);
-        await this.processMigration(allCompanies);
-        completed && (allCompanies.length = 0);
-      } while (this.lookMoreCompanies.hasMore);
+      const completed = await this.processMigration(this.allCompanies);
       // eslint-disable-next-line no-console
-      console.log('all companies were migrated');
+      completed && console.log('all companies were migrated');
     } catch (error) {
       Logger.error('Error in HubSpotCompanies_BO.migrateCompanies', {
         message: error,
@@ -109,13 +68,53 @@ export default class HubSpotCompanies_BO {
     }
   }
 
+  static async fetchAllCompanies(after?: string): Promise<boolean> {
+    try {
+      if (!after && this.companies) {
+        this.allCompanies.push(...this.companies.companies);
+        if (!('paging' in this.companies)) return this.companies;
+        after = this.companies.paging.next.after;
+      }
+
+      const { results, paging } = await this.hfwCompanies.getCompanies(
+        this.propsHFWToLookUp,
+        after
+      );
+      const companiesWithProperDataSet = results.filter(
+        (company) => company.properties.domain && company.properties.industry
+      );
+      this.allCompanies.push(...companiesWithProperDataSet);
+      /*writeFileSync(
+        join(cwd(), '/storage/data/companies.json'),
+        JSON.stringify({ companies: this.allCompanies, paging })
+      );*/
+      // eslint-disable-next-line no-console
+      console.log('%d companies stored', this.allCompanies.length);
+
+      if (paging) {
+        await this.fetchAllCompanies(paging.next.after);
+      }
+
+      return Promise.resolve(true);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Error in HubSpotCompanies_BO.fetchAllCompanies', error);
+      Logger.error('Error in HubSpotCompanies_BO.fetchAllCompanies', {
+        message: error,
+      });
+      return Promise.reject(false);
+    }
+  }
+
   static async processMigration(companies: Result[]) {
     const companiesChunked = Utils.getDataChunked(companies, 100);
+    let count = 0;
     for (let index = 0; index < companiesChunked.length; index++) {
       try {
         const companies = companiesChunked[index];
+        count += companies.length;
         // eslint-disable-next-line no-console
-        console.log('processing %d companies', companies.length);
+        console.log('companies reached %d', count);
         const [dataToInsert, dataToUpdate] =
           await this.checkCompanyAndSetSeparateValues(companies);
 
@@ -125,14 +124,17 @@ export default class HubSpotCompanies_BO {
         dataToUpdate.length > 0 &&
           (await this.updateBatchCompany(dataToUpdate));
       } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(
+          'Error in HubSpotCompanies_BO.migrateCompanies processing companies',
+          error
+        );
         Logger.error(
           'Error in HubSpotCompanies_BO.migrateCompanies processing companies',
           {
             message: error,
-            after: this.lookMoreCompanies.after,
           }
         );
-        return Promise.reject(false);
       }
     }
     return Promise.resolve(true);
@@ -172,17 +174,26 @@ export default class HubSpotCompanies_BO {
         });
         if (dataInGinger.total > 0) {
           const { [0]: gingerObject } = dataInGinger.results;
-
-          dataToUpdate.push({
-            id: Number(dataInGinger.results.at(0)?.id),
-            properties: await this.mapPropValue(gingerObject, company),
-          });
+          const exists = dataToUpdate.filter(
+            (data) => data.id === +gingerObject.id
+          );
+          if (exists.length === 0) {
+            dataToUpdate.push({
+              id: Number(gingerObject.id),
+              properties: await this.mapPropValue(gingerObject, company),
+            });
+          }
         } else {
           dataToInsert.push({ properties: await this.mapObjectValue(company) });
         }
       }
       return Promise.resolve([dataToInsert, dataToUpdate]);
     } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(
+        'Error in HubSpotCompanies_BO.checkCompanyAndSetSeparateValues',
+        error
+      );
       return Promise.reject(
         'Error in HubSpotCompanies_BO.checkCompanyAndSetSeparateValues'
       );

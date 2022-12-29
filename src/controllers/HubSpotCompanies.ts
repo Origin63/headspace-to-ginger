@@ -46,6 +46,7 @@ export default class HubSpotCompanies {
         params: {
           properties: props,
           after,
+          limit: 100,
         },
         headers: {
           'Content-Type': this.accept,
