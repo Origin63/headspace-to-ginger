@@ -42,11 +42,12 @@ export default class HubspotContacts_BO {
   static data: localContactData = {};
   static completed: any = {};
   static hubspotSearch: InstanceType < typeof HubSpotSearch >
-    static hubspotAssociations: InstanceType < typeof HubspotAssociations >
-    static hubspotContacts: InstanceType < typeof HubspotContacts >
-    static hubspotCompanies: InstanceType < typeof HubSpotCompanies >
-    static h4wOwnersInstance: InstanceType < typeof HubSpotOwners >
-    static gingerOwnersInstance: InstanceType < typeof HubSpotOwners >
+  static hubspotAssociations: InstanceType < typeof HubspotAssociations >
+  static hubspotContacts: InstanceType < typeof HubspotContacts >
+  static gingerContacts: InstanceType < typeof HubspotContacts >
+  static hubspotCompanies: InstanceType < typeof HubSpotCompanies >
+  static h4wOwnersInstance: InstanceType < typeof HubSpotOwners >
+  static gingerOwnersInstance: InstanceType < typeof HubSpotOwners >
 
     /**
      * Argument to be passed in console to execute a single function
@@ -63,21 +64,22 @@ export default class HubspotContacts_BO {
 
   static iteration: number = 0;
 
-  static loadInstances() {
+  static loadInstances(gingerToken : string | null = null) {
     dotenv.config();
-    this.hubspotSearch = new HubSpotSearch(process.env.HSTOKENJESUS_GINGER as string);
-    this.hubspotAssociations = new HubspotAssociations(process.env.HSTOKENJESUS_GINGER as string);
+    this.hubspotSearch = new HubSpotSearch(gingerToken ? gingerToken : process.env.HSTOKENJESUS_GINGER as string);
+    this.hubspotAssociations = new HubspotAssociations(gingerToken ? gingerToken : process.env.HSTOKENJESUS_GINGER as string);
+    this.gingerContacts = new HubspotContacts(gingerToken ? gingerToken : process.env.HSTOKENJESUS_GINGER as string);
     this.hubspotContacts = new HubspotContacts(process.env.HSTOKENJESUS_HDFORWORK as string);
     this.hubspotCompanies = new HubSpotCompanies(process.env.HSTOKENJESUS_HDFORWORK as string);
     this.h4wOwnersInstance = new HubSpotOwners(process.env.HSTOKENJESUS_HDFORWORK as string);
-    this.gingerOwnersInstance = new HubSpotOwners(process.env.HSTOKENJESUS_GINGER as string);
+    this.gingerOwnersInstance = new HubSpotOwners(gingerToken ? gingerToken : process.env.HSTOKENJESUS_GINGER as string);
   }
 
   static init() {
     dotenv.config();
     const consoleFunction = this.ConsoleFunctions[this.ConsoleArgument];
     if (consoleFunction) {
-      consoleFunction(process.argv[3]);
+      consoleFunction(process.argv[3], process.argv[4]);
     }
   }
 
@@ -85,7 +87,7 @@ export default class HubspotContacts_BO {
    * Get All Paginated Emails From Hubspot In a Single Call
    * @return Array of Records
    */
-  static async getAllContactsPaginated(url: null | string = null, next: boolean = false) {
+  static async getAllContactsPaginated(url: null | string = null, next : boolean = false) {
     try {
       this.loadInstances();
       if (!url || next) {
@@ -102,13 +104,13 @@ export default class HubspotContacts_BO {
             }
           } = this.data['paging'];
           url = link;
-
-          if (Object.keys(this.data).length > 70000) {
-            this.iteration = this.iteration + 1;
-            this.data = {paging: this.data.paging || null};
-            await this.getAllContactsPaginated(url, true);
-          }
         }
+      }
+
+      if (this.data && Object.keys(this.data).length > 70000) {
+        this.iteration = this.iteration + 1;
+        this.data = {paging: this.data.paging || null};
+        await this.getAllContactsPaginated(this.data.paging.next.link, true);
       }
 
       const records: hubspotResult = await this.hubspotContacts.getContacts(url);
@@ -123,7 +125,7 @@ export default class HubspotContacts_BO {
         paging: paging
       };
 
-      console.log(Object.keys(this.data).length);
+      console.log("%d Contacts in iteration number %d", Object.keys(this.data).length, this.iteration);
       fs.writeFileSync(path.join(cwd(), '/src/data', `contacts-${this.iteration}.json`), JSON.stringify(this.data));
 
       if (paging) {
@@ -181,15 +183,18 @@ export default class HubspotContacts_BO {
     console.log(Object.keys(data).length)
   }
 
-  static async migrateContacts(filename: string = 'contacts-0'): Promise < void > {
+  static async migrateContacts(filename: string = 'contacts-0', gingerToken : string | null = null): Promise < void > {
     console.log(filename);
     try {
-      this.loadInstances();
-      const gingerContacts = new HubspotContacts(
-        process.env.HSTOKENJESUS_GINGER as string
-      );
-
+      this.loadInstances(gingerToken);
+      this.completed = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts_done.json'));
       this.data = Utils.readJsonFile(path.join(cwd(), '/src/data', `${filename}.json`));
+      console.log(Object.keys(this.data).length);
+      this.data = this.deleteCompletedContactsFromPayload(this.data, this.completed);
+
+      
+      console.log(Object.keys(this.data).length);
+
       const chuncks = Utils.getDataChunked(Object.values(this.data), 30);
       await this.loadOwners();
 
@@ -201,9 +206,11 @@ export default class HubspotContacts_BO {
             chunck
           );
 
-          await this.createBatchContact(gingerContacts, dataToInsert);
+          await this.createBatchContact(this.gingerContacts, dataToInsert);
 
-          await this.updateBatchContact(gingerContacts, dataToUpdate);
+          await this.updateBatchContact(this.gingerContacts, dataToUpdate);
+
+          console.log("%d contacts done so far", Object.keys(this.completed).length);
         } catch (error) {
           console.log(error);
         }
@@ -215,19 +222,27 @@ export default class HubspotContacts_BO {
     }
   }
 
+  static deleteCompletedContactsFromPayload(fullSet : localContactData, completed : any) {
+
+    for(let key in completed) {
+      delete fullSet[key];
+    }
+
+    return fullSet;
+  }
+
   static checkContactAndSetSeparateValues = async (
     contacts: any[]
   ): Promise < [insertContact[], updateContact[]] > => {
     try {
       const dataToInsert: insertContact[] = [];
       const dataToUpdate: updateContact[] = [];
-      const completed = Utils.readJsonFile(path.join(cwd(), '/src/data', 'contacts_done.json'));
 
       for (let index = 0; index < contacts.length; index++) {
         try {
           console.log('processing %d of %d', index, Object.keys(contacts).length);
           const contact = contacts[index];
-          if (!completed[contact.id]) {
+          if (!this.completed[contact.id]) {
             const dataInGinger = await this.hubspotSearch.search('contacts', {
               filterGroups: [{
                 filters: [{
